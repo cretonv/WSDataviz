@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
+    "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "d3": "^6.3.0",
     "nuxt": "^2.14.6"
@@ -20,8 +21,10 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.5.0",
     "jest": "^26.5.0",
+    "node-sass": "^5.0.0",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
     "stylus": "^0.54.8",
     "stylus-loader": "^4.3.1",
     "vue-jest": "^3.0.4"
