@@ -1,9 +1,6 @@
 <template>
   <div>
     <h1>Exemple de mon graph</h1>
-    <div class="hello">
-      Bonjour <span class="blue">toi</span>
-    </div>
     <LineChart :labels="labels" :entity-and-datas="entityAndDatas" :key="componentKey"> </LineChart>
   </div>
 </template>
