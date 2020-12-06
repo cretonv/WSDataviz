@@ -64,7 +64,7 @@ export default {
     width: 100%;
     height: 100vh;
     display: grid;
-    background-color: black;
+    background-color: #495464;
     grid-column-gap: 1px;
     grid-row-gap: 1px; 
   }
