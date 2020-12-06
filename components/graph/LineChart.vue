@@ -34,20 +34,6 @@
           labels: this.labels,
           datasets: [
             {
-              label: 'Sécheresse',
-              data: this.entityAndDatas.Drought,
-              backgroundColor: [
-                'rgba(255, 99, 132, 0)',
-              ],
-              borderColor: [
-                'rgba(17,84,255,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(17,84,255,1)',
-              pointBorderWidth: 2
-            },
-            {
               label: 'Toutes les catastrophes naturels',
               data: this.entityAndDatas['All natural disasters'],
               backgroundColor: [
@@ -81,6 +67,20 @@
               pointBorderWidth: 2
             },
             {
+              label: 'Sécheresse',
+              data: this.entityAndDatas.Drought,
+              backgroundColor: [
+                'rgba(255, 99, 132, 0)',
+              ],
+              borderColor: [
+                'rgba(17,84,255,1)',
+              ],
+              borderWidth: 3,
+              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+              pointBorderColor: 'rgba(17,84,255,1)',
+              pointBorderWidth: 2
+            },
+            {
               label: 'Feu de forêt',
               data: this.entityAndDatas['Wildfire'],
               backgroundColor: [
@@ -94,21 +94,82 @@
               pointBorderColor: 'rgba(17,212,255,1)',
               pointBorderWidth: 2
             },
+            {
+              label: 'Température extrême',
+              data: this.entityAndDatas['Extreme temperature'],
+              backgroundColor: [
+                'rgba(255, 159, 64, 0)'
+              ],
+              borderColor: [
+                'rgba(90,132,255, 1)',
+              ],
+              borderWidth: 3,
+              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+              pointBorderColor: 'rgba(90,132,255, 1)',
+              pointBorderWidth: 2
+            },
+            {
+              label: 'Météo Extrême',
+              data: this.entityAndDatas['Extreme weather'],
+              backgroundColor: [
+                'rgba(255, 159, 64, 0)'
+              ],
+              borderColor: [
+                'rgb(13,130,255,1)',
+              ],
+              borderWidth: 3,
+              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+              pointBorderColor: 'rgba(13,130,255,1)',
+              pointBorderWidth: 2
+            },
           ]
         },
         options: {
           aspectRatio: 2,
+          layout: {
+            padding: {
+              top: 25,
+            }
+          },
           scales: {
             yAxes: [{
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
+                stepSize: 100,
+                fontFamily: 'Montserrat',
+                fontSize: 13
+
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Nombre de catastrophes',
+                fontFamily: 'Montserrat'
               }
             }],
             xAxes : [ {
               gridLines : {
                 display : false
+              },
+              ticks: {
+                fontFamily: 'Montserrat',
+                stepSize: 50
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Années',
+                fontFamily: 'Montserrat'
+              },
+              scales : {
+                max: 10
               }
             } ]
+          },
+          legend: {
+            position: 'left',
+            labels: {
+              usePointStyle: true,
+              padding: 18
+            },
           },
           tooltips: {
             callbacks: {
