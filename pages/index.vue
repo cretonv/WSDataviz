@@ -2,6 +2,9 @@
   <div class="body">
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.4fr'" :rows="'repeat(4, 1fr)'"></GridBackground>
       <div class="content">
+        <div class="logo">
+          <img class="earth" src="ressources/icon/earth.svg">
+        </div>
         <div class="buttons">
           <button @click="test('first')"></button>
           <button @click="test('second')"></button>
@@ -13,10 +16,10 @@
         <div class="paragraph">
           <p>Definition catastrophes climatiques</p>
         </div>
-        <img class="firstImage" src="data/ressources/img/part1/">
-        <img class="secondImage" src="data/ressources/img/part1/">
+        <img class="firstImage" src="ressources/img/part1/">
+        <img class="secondImage" src="ressources/img/part1/">
+        <h1 class="page">{{page}}</h1>
       </div>
-      <h1 class="page">{{page}}</h1>
   </div>
 </template>
 
@@ -43,7 +46,8 @@
 
 <style lang="scss">
   .body{
-    position: relative;
+    position: fixed;
+    margin-left: 0%;
     width:100%;
     height:100vh;
       
@@ -62,6 +66,22 @@
       z-index:0;
     }
 
+    .buttons {
+      position: absolute;
+
+      button {
+        position: fixed;
+        cursor: pointer;
+        transform: translateY(-50%) transalteX(-50%);
+        width:20px;
+        height:20px;
+        font-size:0px;
+        border-radius: 100%;
+        background-color: black;
+        border: 0px;
+      }
+    }
+
     .content {
       position: absolute;
       z-index:1;
@@ -73,6 +93,18 @@
       grid-column-gap: 1px;
       grid-row-gap: 1px;
 
+      .logo {
+        grid-column: 8 / 9;
+        grid-row: 1 / 2;
+        text-align: center;
+
+        .earth{
+          margin-top: 30px;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
       .firstImage {
         grid-column: 6 / 7;
         grid-row: 1 / 3;
@@ -81,18 +113,6 @@
       .secondImage {
         grid-column: 5 / 6;
         grid-row: 3 / 5;
-      }
-
-      button {
-        grid-column: 2 / 3;
-        cursor: pointer;
-        transform: translateY(-50%) transalteX(-50%);
-        width:20px;
-        height:20px;
-        font-size:0px;
-        border-radius: 100%;
-        background-color: black;
-        border: 0px;
       }
 
       .title {
