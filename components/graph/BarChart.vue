@@ -75,13 +75,13 @@ export default {
         },
         sorting() {
             const temp = []
-            for (var i = 0; i < this.data.length; i++) {
+            for (let i = 0; i < this.data.length; i++) {
                 temp.push(this.data[i])
             }
-            var sortedLabel = []
+            let sortedLabel = []
             this.data.sort(function(a, b){return b-a})
             console.log(temp, this.data)
-            for (var i = 0; i < this.data.length; i++) {
+            for (let i = 0; i < this.data.length; i++) {
                 sortedLabel.push(this.label[temp.indexOf(this.data[i])])
             }
             this.label = sortedLabel
