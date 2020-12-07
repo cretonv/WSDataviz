@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-      <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.4fr'" :rows="'repeat(4, 1fr)'"></GridBackground>
+      <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.4fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
         <div class="logo">
           <img class="earth" src="ressources/icon/earth.svg">
@@ -8,13 +8,20 @@
         <button class="points" @click="test('first')"> </button>
         <button class="points" @click="test('second')"> </button>
         <button class="points" @click="test('third')"> </button>
+
+        <Title title="Catastrophes climatiques"
+               paragraph="Definition catastrophes climatiques"
+               page="01"
+               :image1src="'/ressources/img/image1.jpg'"
+               image2src="/ressources/img/image2.jpg"
+        > </Title>
       </div>
   </div>
 </template>
 
 <script>
   import GridBackground from "../components/GridBackground.vue";
-  import Title from "../components/Title";
+  import Title from "../components/Title.vue";
 
   export default {
     component() {
