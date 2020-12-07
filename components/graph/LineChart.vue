@@ -23,7 +23,6 @@
     },
     mounted() {
       let ctx = this.$refs.myChart.getContext('2d')
-      console.log('MARRE', this.labels)
       new Chart(ctx, {
         type: 'line',
         option: {
@@ -125,7 +124,7 @@
           ]
         },
         options: {
-          aspectRatio: 2,
+          aspectRatio: 2.5,
           layout: {
             padding: {
               top: 25,
@@ -191,7 +190,7 @@
 
 <style lang="scss" scoped>
 .lineChart {
-  width: 100vw;
-  height: 50vw;
+  width: 125vh;
+  height: 50vh;
 }
 </style>

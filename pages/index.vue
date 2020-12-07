@@ -9,7 +9,7 @@
         <button class="points" @click="test('second')"> </button>
         <button class="points" @click="test('third')"> </button>
 
-        <Title title="Catastrophes climatiques"
+        <!--<Title title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
                firstImageSrc="/ressources/img/image1.jpg"
@@ -18,7 +18,8 @@
                firstImageYPosition="6"
                secondImageXPosition="3/6"
                secondImageYPosition="5"
-        > </Title>
+        > </Title>-->
+        <GraphDisplay> </GraphDisplay>
       </div>
   </div>
 </template>
@@ -26,10 +27,12 @@
 <script>
   import GridBackground from "../components/GridBackground.vue";
   import Title from "../components/Title.vue";
+  import GraphDisplay from "../components/GraphDisplay.vue";
 
   export default {
-    component() {
-      GridBackground
+    component: {
+      GridBackground,
+      GraphDisplay
     },
     data() {
       return {
