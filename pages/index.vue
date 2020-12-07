@@ -2,24 +2,45 @@
   <div class="body">
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.4fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
-        <div class="logo">
-          <img class="earth" src="ressources/icon/earth.svg">
+        <div class="nav">
+          <div class="logo">
+            <img class="earth" src="ressources/icon/earth.svg">
+          </div>
+          <button class="points" @click="test('first')"> </button>
+          <button class="points" @click="test('second')"> </button>
+          <button class="points" @click="test('third')"> </button>
         </div>
-        <button class="points" @click="test('first')"> </button>
-        <button class="points" @click="test('second')"> </button>
-        <button class="points" @click="test('third')"> </button>
 
-        <Title title="Catastrophes climatiques"
-               paragraph="Definition catastrophes climatiques"
-               page="01"
-               :image1src="'/ressources/img/image1.jpg'"
-               image2src="/ressources/img/image2.jpg"
-        > </Title>
+        <full-page ref="fullpage" :options="options" id="fullpage">
+          <div class="section">
+            <Title 
+                  title="Catastrophes climatiques"
+                  paragraph="Definition catastrophes climatiques"
+                  page="01"
+                  :image1src="'/ressources/img/image1.jpg'"
+                  image2src="/ressources/img/image2.jpg"
+            > </Title>
+          </div>
+          <div class="section">
+            <Title 
+                  title="Catastrophes climatiques"
+                  paragraph="Definition catastrophes climatiques"
+                  page="01"
+                  :image1src="'/ressources/img/image1.jpg'"
+                  image2src="/ressources/img/image2.jpg"
+            > </Title>
+          </div>
+        </full-page>
       </div>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import VueFullPage from 'vue-fullpage'
+
+  Vue.use(VueFullPage);
+
   import GridBackground from "../components/GridBackground.vue";
   import Title from "../components/Title.vue";
 
@@ -29,9 +50,16 @@
     },
     data() {
       return {
-        page: "01"
+        options: {
+          licenseKey: 'YOUR_KEY_HEERE',
+          menu: '#menu',
+          anchors: ['page1', 'page2', 'page3']
+        },
+        page: "01",
+        pageable: null
       }
     },
+    mounted() {},
     methods: {
       test(test){
         console.log('test', test)
@@ -49,15 +77,26 @@
     height: 100vh;
 
     .content {
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 100vh;
-      display: grid;
-      grid-template-columns: 0.4fr repeat(6, 1fr) 0.4fr;
-      grid-template-rows: repeat(4, 1fr);
-      grid-column-gap: 1px;
-      grid-row-gap: 1px;
+
+      .nav{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 0.4fr repeat(6, 1fr) 0.4fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+      }
+
+      #fullpage{
+        width: 100vw;
+
+        .fp-tableCell{
+          vertical-align: unset;
+        }
+      }
 
       .logo {
         grid-column: 8 / 9;
