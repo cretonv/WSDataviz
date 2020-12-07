@@ -12,8 +12,8 @@
         <Title title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
-               :image1src="'/ressources/img/image1.jpg'"
-               image2src="/ressources/img/image2.jpg"
+               firstImageSrc="/ressources/img/image1.jpg"
+               secondImageSrc="/ressources/img/image2.jpg"
         > </Title>
       </div>
   </div>

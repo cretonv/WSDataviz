@@ -1,14 +1,14 @@
 <template>
   <div class="content">
     <div class="title">
-      <h1> {{title}} </h1>
+      <h2> {{title}} </h2>
     </div>
     <div class="paragraph">
       <p> {{ paragraph }}</p>
     </div>
-    <div class="firstImage img"><img src="/ressources/img/image1.jpg" alt=""></div>
-    <div class="secondImage img"><img src="/ressources/img/image2.jpg" alt=""></div>
-    <h1 class="page">{{page}}</h1>
+    <div class="firstImage img"><img :src='firstImageSrc' alt=""></div>
+    <div class="secondImage img"><img :src='secondImageSrc' alt=""></div>
+    <h2 class="page">{{page}}</h2>
   </div>
 </template>
 
@@ -18,8 +18,8 @@
       props: {
         title: String,
         paragraph: String,
-        image1Src: String,
-        image2Src: String,
+        firstImageSrc: String,
+        secondImageSrc: String,
         page: String
       },
     }
@@ -42,7 +42,7 @@
       color: black;
       position: fixed;
       right: 0;
-      bottom: -50px;
+      bottom: -65px;
     }
 
     .img {
@@ -78,6 +78,7 @@
       grid-row: 2 / 3;
       color: black;
       font-size: 40px;
+      font-family: 'Montserrat';
     }
 
     .paragraph {
@@ -86,7 +87,8 @@
       grid-column: 3 / 5;
       grid-row: 3 / 4;
       color: black;
-      font-size: 10px;
+      font-size: 18px;
+      font-family: Montserrat;
     }
   }
 </style>
