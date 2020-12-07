@@ -14,7 +14,9 @@
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
     "d3": "^6.3.0",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "nuxt-fullpage.js": "0.0.3",
+    "vue-fullpage": "^2.0.5"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.1.0",

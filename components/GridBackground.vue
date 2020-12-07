@@ -51,9 +51,6 @@ export default {
             default: '0.4fr repeat(6, 1fr) 0.4fr',
             required: false
         },
-    },
-    mounted() {
-        console.log('imported')
     }
 }
 

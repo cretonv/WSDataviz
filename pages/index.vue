@@ -2,14 +2,18 @@
   <div class="body">
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.4fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
-        <div class="logo">
-          <img class="earth" src="ressources/icon/earth.svg">
+        <div class="nav">
+          <div class="logo">
+            <img class="earth" src="ressources/icon/earth.svg">
+          </div>
+          <button class="points" @click="test('first')"> </button>
+          <button class="points" @click="test('second')"> </button>
+          <button class="points" @click="test('third')"> </button>
         </div>
-        <button class="points" @click="test('first')"> </button>
-        <button class="points" @click="test('second')"> </button>
-        <button class="points" @click="test('third')"> </button>
-
-        <!--<Title title="Catastrophes climatiques"
+        <full-page ref="fullpage" :options="options" id="fullpage">
+          <div class="section">
+            <Rcfirst
+               title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
                firstImageSrc="/ressources/img/image1.jpg"
@@ -18,27 +22,43 @@
                firstImageYPosition="6"
                secondImageXPosition="3/6"
                secondImageYPosition="5"
-        > </Title>-->
-        <GraphDisplay> </GraphDisplay>
+            > </Rcfirst>
+          </div>
+          <div class="section">
+            <GraphDisplay> </GraphDisplay>
+          </div>
+        </full-page>
       </div>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import VueFullPage from 'vue-fullpage'
+
+  Vue.use(VueFullPage);
+
   import GridBackground from "../components/GridBackground.vue";
-  import Title from "../components/Title.vue";
   import GraphDisplay from "../components/GraphDisplay.vue";
+  import Rcfirst from "../components/RCFirst.vue";
 
   export default {
-    component: {
+    component() {
       GridBackground,
+      Rcfirst,
       GraphDisplay
     },
     data() {
       return {
+        options: {
+          licenseKey: 'my_key',
+          menu: '#menu',
+          anchors: ['page1', 'page2', 'page3']
+        },
         page: "01"
       }
     },
+    mounted() {},
     methods: {
       test(test){
         console.log('test', test)
@@ -56,15 +76,26 @@
     height: 100vh;
 
     .content {
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 100vh;
-      display: grid;
-      grid-template-columns: 0.4fr repeat(6, 1fr) 0.4fr;
-      grid-template-rows: repeat(4, 1fr);
-      grid-column-gap: 1px;
-      grid-row-gap: 1px;
+
+      .nav{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 0.4fr repeat(6, 1fr) 0.4fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+      }
+
+      #fullpage{
+        width: 100vw;
+
+        .fp-tableCell{
+          vertical-align: unset;
+        }
+      }
 
       .logo {
         grid-column: 8 / 9;

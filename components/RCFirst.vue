@@ -1,8 +1,6 @@
 <template>
   <div class="content">
-
     <div class="title">
-
       <h2> {{title}} </h2>
     </div>
     <div class="paragraph">
@@ -16,7 +14,7 @@
 
 <script>
     export default {
-      name: "title",
+      name: "rcfirst",
       props: {
         title: String,
         paragraph: String,
