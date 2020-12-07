@@ -13,22 +13,28 @@
 
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
-            <Title 
-                  title="Catastrophes climatiques"
-                  paragraph="Definition catastrophes climatiques"
-                  page="01"
-                  :image1src="'/ressources/img/image1.jpg'"
-                  image2src="/ressources/img/image2.jpg"
-            > </Title>
+            <RCFirst title="Catastrophes climatiques"
+               paragraph="Definition catastrophes climatiques"
+               page="01"
+               firstImageSrc="/ressources/img/image1.jpg"
+               secondImageSrc="/ressources/img/image2.jpg"
+               firstImageXPosition="1/3"
+               firstImageYPosition="6"
+               secondImageXPosition="3/6"
+               secondImageYPosition="5"
+            > </RCFirst>
           </div>
           <div class="section">
-            <Title 
-                  title="Catastrophes climatiques"
-                  paragraph="Definition catastrophes climatiques"
-                  page="01"
-                  :image1src="'/ressources/img/image1.jpg'"
-                  image2src="/ressources/img/image2.jpg"
-            > </Title>
+            <RCFirst title="Catastrophes climatiques"
+               paragraph="Definition catastrophes climatiques"
+               page="01"
+               firstImageSrc="/ressources/img/image1.jpg"
+               secondImageSrc="/ressources/img/image2.jpg"
+               firstImageXPosition="1/3"
+               firstImageYPosition="6"
+               secondImageXPosition="3/6"
+               secondImageYPosition="5"
+            > </RCFirst>
           </div>
         </full-page>
       </div>
@@ -42,7 +48,7 @@
   Vue.use(VueFullPage);
 
   import GridBackground from "../components/GridBackground.vue";
-  import Title from "../components/Title.vue";
+  import RCFirst from "../components/RCFirst.vue";
 
   export default {
     component() {

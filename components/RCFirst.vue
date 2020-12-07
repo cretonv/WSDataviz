@@ -1,14 +1,16 @@
 <template>
   <div class="content">
+
     <div class="title">
-      <h1> {{title}} </h1>
+
+      <h2> {{title}} </h2>
     </div>
     <div class="paragraph">
       <p> {{ paragraph }}</p>
     </div>
-    <div class="firstImage img"><img src="/ressources/img/image1.jpg" alt=""></div>
-    <div class="secondImage img"><img src="/ressources/img/image2.jpg" alt=""></div>
-    <h1 class="page">{{page}}</h1>
+    <div class="firstImage img" :style="getFirstImagePosition" ><img :src='firstImageSrc' alt=""></div>
+    <div class="secondImage img" :style="getSecondImagePosition" ><img :src='secondImageSrc' alt=""></div>
+    <h2 class="page">{{page}}</h2>
   </div>
 </template>
 
@@ -18,10 +20,28 @@
       props: {
         title: String,
         paragraph: String,
-        image1Src: String,
-        image2Src: String,
+        firstImageSrc: String,
+        firstImageXPosition: String,
+        firstImageYPosition: String,
+        secondImageSrc: String,
+        secondImageXPosition: String,
+        secondImageYPosition: String,
         page: String
       },
+      computed: {
+        getFirstImagePosition() {
+          return {
+            'grid-row': this.firstImageXPosition,
+            'grid-column': this.firstImageYPosition,
+          };
+        },
+        getSecondImagePosition() {
+          return {
+            'grid-row': this.secondImageXPosition,
+            'grid-column': this.secondImageYPosition,
+          };
+        }
+      }
     }
 </script>
 
@@ -42,7 +62,7 @@
       color: black;
       position: fixed;
       right: 0;
-      bottom: -50px;
+      bottom: -65px;
     }
 
     .img {
@@ -62,22 +82,13 @@
       }
     }
 
-    .firstImage {
-      grid-column: 6 / 7;
-      grid-row: 1 / 3;
-    }
-
-    .secondImage {
-      grid-column: 5 / 6;
-      grid-row: 3 / 5;
-    }
-
     .title {
       margin-left: 41px;
       grid-column: 2 / 5;
       grid-row: 2 / 3;
       color: black;
       font-size: 40px;
+      font-family: 'Montserrat';
     }
 
     .paragraph {
@@ -86,7 +97,8 @@
       grid-column: 3 / 5;
       grid-row: 3 / 4;
       color: black;
-      font-size: 10px;
+      font-size: 18px;
+      font-family: 'Montserrat';
     }
   }
 </style>
