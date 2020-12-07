@@ -13,7 +13,7 @@
 
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
-            <RCFirst title="Catastrophes climatiques"
+            <Rcfirst title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
                firstImageSrc="/ressources/img/image1.jpg"
@@ -22,10 +22,10 @@
                firstImageYPosition="6"
                secondImageXPosition="3/6"
                secondImageYPosition="5"
-            > </RCFirst>
+            ></Rcfirst>
           </div>
           <div class="section">
-            <RCFirst title="Catastrophes climatiques"
+            <Rcfirst title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
                firstImageSrc="/ressources/img/image1.jpg"
@@ -34,7 +34,7 @@
                firstImageYPosition="6"
                secondImageXPosition="3/6"
                secondImageYPosition="5"
-            > </RCFirst>
+            ></Rcfirst>
           </div>
         </full-page>
       </div>
@@ -48,21 +48,21 @@
   Vue.use(VueFullPage);
 
   import GridBackground from "../components/GridBackground.vue";
-  import RCFirst from "../components/RCFirst.vue";
+  import Rcfirst from "../components/RCFirst.vue";
 
   export default {
     component() {
-      GridBackground
+      GridBackground,
+      Rcfirst
     },
     data() {
       return {
         options: {
-          licenseKey: 'YOUR_KEY_HEERE',
+          licenseKey: 'my_key',
           menu: '#menu',
           anchors: ['page1', 'page2', 'page3']
         },
-        page: "01",
-        pageable: null
+        page: "01"
       }
     },
     mounted() {},
