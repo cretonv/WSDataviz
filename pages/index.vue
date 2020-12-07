@@ -135,6 +135,10 @@
       }
     }
 
+    #fullpage {
+      z-index: 10;
+    }
+
     .background {
       position: fixed;
       width: 100%;
