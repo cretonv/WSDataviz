@@ -14,7 +14,7 @@
 
 <script>
     export default {
-      name: "rcfirst",
+      name: "RCfirst",
       props: {
         title: String,
         paragraph: String,
@@ -54,11 +54,12 @@
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 1px;
     grid-row-gap: 1px;
+    overflow: hidden;
 
     .page {
       font-size: 300px;
       color: black;
-      position: fixed;
+      position: absolute;
       right: 0;
       bottom: -65px;
     }

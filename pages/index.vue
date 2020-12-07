@@ -12,7 +12,7 @@
         </div>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
-            <Rcfirst
+            <RCfirst
                title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
@@ -22,7 +22,7 @@
                firstImageYPosition="6"
                secondImageXPosition="3/6"
                secondImageYPosition="5"
-            > </Rcfirst>
+            > </RCfirst>
           </div>
           <div class="section">
             <GraphDisplay> </GraphDisplay>
@@ -40,12 +40,13 @@
 
   import GridBackground from "../components/GridBackground.vue";
   import GraphDisplay from "../components/GraphDisplay.vue";
-  import Rcfirst from "../components/RCFirst.vue";
+  import RCfirst from "../components/RCFirst.vue";
 
   export default {
+    components: {GraphDisplay, RCfirst},
     component() {
       GridBackground,
-      Rcfirst,
+      RCfirst,
       GraphDisplay
     },
     data() {
