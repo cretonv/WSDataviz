@@ -41,12 +41,12 @@
 export default {
     name: "GridBackground",
     props: {
-        rows: { 
+        rows: {
             type: String,
             default: 'repeat(4, 1fr)',
             required: false
         },
-        columns: { 
+        columns: {
             type: String,
             default: '0.4fr repeat(6, 1fr) 0.4fr',
             required: false
@@ -66,11 +66,11 @@ export default {
     display: grid;
     background-color: #495464;
     grid-column-gap: 1px;
-    grid-row-gap: 1px; 
-  }
+    grid-row-gap: 1px;
 
-  .grid-element {
-    background-color: white;
-    transition-duration: 0.7s;
+    .grid-element {
+      background-color: white;
+      transition-duration: 0.7s;
+    }
   }
 </style>
