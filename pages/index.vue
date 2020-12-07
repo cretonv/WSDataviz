@@ -14,6 +14,10 @@
                page="01"
                firstImageSrc="/ressources/img/image1.jpg"
                secondImageSrc="/ressources/img/image2.jpg"
+               firstImageXPosition="1/3"
+               firstImageYPosition="6"
+               secondImageXPosition="3/6"
+               secondImageYPosition="5"
         > </Title>
       </div>
   </div>

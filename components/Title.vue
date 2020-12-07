@@ -1,13 +1,15 @@
 <template>
   <div class="content">
+
     <div class="title">
+
       <h2> {{title}} </h2>
     </div>
     <div class="paragraph">
       <p> {{ paragraph }}</p>
     </div>
-    <div class="firstImage img"><img :src='firstImageSrc' alt=""></div>
-    <div class="secondImage img"><img :src='secondImageSrc' alt=""></div>
+    <div class="firstImage img" :style="getFirstImagePosition" ><img :src='firstImageSrc' alt=""></div>
+    <div class="secondImage img" :style="getSecondImagePosition" ><img :src='secondImageSrc' alt=""></div>
     <h2 class="page">{{page}}</h2>
   </div>
 </template>
@@ -19,9 +21,27 @@
         title: String,
         paragraph: String,
         firstImageSrc: String,
+        firstImageXPosition: String,
+        firstImageYPosition: String,
         secondImageSrc: String,
+        secondImageXPosition: String,
+        secondImageYPosition: String,
         page: String
       },
+      computed: {
+        getFirstImagePosition() {
+          return {
+            'grid-row': this.firstImageXPosition,
+            'grid-column': this.firstImageYPosition,
+          };
+        },
+        getSecondImagePosition() {
+          return {
+            'grid-row': this.secondImageXPosition,
+            'grid-column': this.secondImageYPosition,
+          };
+        }
+      }
     }
 </script>
 
@@ -62,16 +82,6 @@
       }
     }
 
-    .firstImage {
-      grid-column: 6 / 7;
-      grid-row: 1 / 3;
-    }
-
-    .secondImage {
-      grid-column: 5 / 6;
-      grid-row: 3 / 5;
-    }
-
     .title {
       margin-left: 41px;
       grid-column: 2 / 5;
@@ -88,7 +98,7 @@
       grid-row: 3 / 4;
       color: black;
       font-size: 18px;
-      font-family: Montserrat;
+      font-family: 'Montserrat';
     }
   }
 </style>
