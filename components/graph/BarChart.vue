@@ -1,10 +1,17 @@
 <template>
-    <div>
-        <p class="tabTitle" @click="test()">Nombre d’évènements et de victimes par aléa en France en 2019</p>
-        <p @click="change('event')">Évènements</p>
-        <p @click="change('death')">Victimes</p>
-        <div class="chart-container" style="height:50vh; width:60%">
-            <canvas id="tab">
+    <div style="display:flex;">
+        <form class="button">
+            <div>
+                <input @click="change('event')" type="radio" id="dataType1" name="dataType" value="event" checked>
+                <label @click="change('event')" for="dataType1">Évènements</label>
+            </div>
+            <div>
+                <input @click="change('death')" type="radio" id="dataType2" name="dataType" value="death">
+                <label @click="change('death')" for="dataType2">Victimes</label>
+            </div>
+        </form>
+        <div class="chart-container">
+            <canvas style="height: 50vh;" id="tab">
             </canvas>
         </div>
     </div>
@@ -66,7 +73,6 @@ export default {
                     dataset.label = "nombre de morts par évènements"
                 })
             } 
-            console.log(this.data, this.label)
             this.myChart.data.labels = this.label
             this.myChart.data.datasets.forEach((dataset) => {
                 dataset.data = this.data;
@@ -80,7 +86,6 @@ export default {
             }
             let sortedLabel = []
             this.data.sort(function(a, b){return b-a})
-            console.log(temp, this.data)
             for (let i = 0; i < this.data.length; i++) {
                 sortedLabel.push(this.label[temp.indexOf(this.data[i])])
             }
@@ -100,6 +105,7 @@ export default {
                     }]
                 },
                 options: {
+                    aspectRatio: 2,
                     legend: {
                         display: true
                     },
@@ -117,6 +123,15 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+.button {
+    width: 20%;
+    right:0;
+}
+
+.chart-container {
+    height: 50vh;
+}
 
 </style>

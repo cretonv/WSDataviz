@@ -86,7 +86,7 @@
       grid-column: 2 / 5;
       grid-row: 2 / 3;
       color: black;
-      font-size: 40px;
+      font-size: 65px;
       font-family: 'Montserrat';
     }
 
