@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <h1>Exemple de mon graph</h1>
-    <LineChart :labels="labels" :entity-and-datas="entityAndDatas" :key="componentKey"> </LineChart>
-  </div>
+  <LineChart :labels="labels" :entity-and-datas="entityAndDatas" :key="componentKey"> </LineChart>
 </template>
 
 <script>
-  import LinePart from "../components/graph/LinePart";
-  import * as d3 from 'd3';
-  import * as d3fetch from 'd3-fetch';
-  import LineChart from "../components/graph/LineChart";
-  import EconomicLineChart from "../components/graph/EconomicLineChart";
+  import LineChart from "./graph/LineChart";
+  import * as d3 from "d3";
 
   export default {
-    components: {LineChart},
+    name: "GraphContainer",
+    components: {
+      LineChart
+    },
     methods: {
       async fetchData() {
         let dataToGet;
@@ -90,18 +87,6 @@
     },
     data() {
       return {
-        nameArray: [
-          {
-            "name": "John",
-            "age": 30,
-            "city": "New York"
-          },
-          {
-            "name": "Jane",
-            "age": 20,
-            "city": "San Francisco"
-          }
-        ],
         labels: [],
         entityAndDatas: {},
         componentKey: 0
@@ -109,21 +94,12 @@
     },
     mounted() {
       this.getLabelsAndEntity()
-      let data = d3.json('data/tweets.json');
-      let data2 = d3fetch.csv('/data/number-of-natural-disaster-events.csv');
-      console.log('TRUC', data);
-      console.log('TRUC', data2);
     }
   }
+
 
 </script>
 
-<style lang="scss">
-  .hello {
-    color: red;
+<style scoped>
 
-    span {
-      color: blue;
-    }
-  }
 </style>

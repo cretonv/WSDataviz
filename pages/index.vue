@@ -25,7 +25,10 @@
             > </RCfirst>
           </div>
           <div class="section">
-            <GraphDisplay> </GraphDisplay>
+            <GraphDisplayPageOne title="Constat MONDE" page="01"> </GraphDisplayPageOne>
+          </div>
+          <div class="section">
+            <GraphDisplayPageTwo title="France - 2019 " subTitle='Nombre d’évènements et de victimes par aléa en France en 2019' page="01"> </GraphDisplayPageTwo>
           </div>
         </full-page>
       </div>
@@ -39,15 +42,23 @@
   Vue.use(VueFullPage);
 
   import GridBackground from "../components/GridBackground.vue";
-  import GraphDisplay from "../components/GraphDisplay.vue";
+  import GraphDisplay from "../components/GraphDisplayPageOne.vue";
   import RCfirst from "../components/RCFirst.vue";
+  import GraphDisplayPageOne from "../components/GraphDisplayPageOne";
+  import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
 
   export default {
-    components: {GraphDisplay, RCfirst},
+    components: {
+      GraphDisplay,
+      RCfirst,
+      GraphDisplayPageOne,
+      GraphDisplayPageTwo
+    },
     component() {
       GridBackground,
       RCfirst,
-      GraphDisplay
+      GraphDisplayPageOne,
+      GraphDisplayPageTwo
     },
     data() {
       return {
