@@ -34,8 +34,8 @@ export default {
     },
     methods: {
         getDetail(event, array){
-            if (array[0] && this.myChart.options.circumference == Math.PI * 2) {
-                console.log('get', this.detaillabel)
+            if (array[0] && this.myChart.options.circumference == Math.PI * 2 && this.detaildata[this.label[array[0]._index]].length >= 1) {
+                console.log('get', this.detaillabel[this.label[array[0]._index]])
                 this.myChart.options.circumference = Math.PI;
                 this.myChart.data.datasets[0].data = this.detaildata[this.label[array[0]._index]]
                 this.myChart.data.labels = this.detaillabel[this.label[array[0]._index]]
@@ -57,16 +57,10 @@ export default {
                         label: this.title,
                         data: this.data,
                         backgroundColor: [
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 99, 132, 1)',
+                            '#CC1E1B',
+                            '#FF3431',
+                            '#FF7B79',
+                            '#FF9796'
                         ],
                         borderWidth: 0
                     }]
@@ -91,5 +85,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.chart-container {
+
+    #tab {
+        height: 100%;
+    }
+}
 
 </style>
