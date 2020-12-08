@@ -1,19 +1,20 @@
 <template>
     <div style="display:flex;">
-        <form class="button">
-            <div>
-                <input @click="change('event')" type="radio" id="dataType1" name="dataType" value="event" checked>
-                <label @click="change('event')" for="dataType1">Évènements</label>
-            </div>
-            <div>
-                <input @click="change('death')" type="radio" id="dataType2" name="dataType" value="death">
-                <label @click="change('death')" for="dataType2">Victimes</label>
-            </div>
-        </form>
         <div class="chart-container">
-            <canvas style="height: 50vh;" id="tab">
+            <canvas id="tab">
             </canvas>
         </div>
+        <form class="button">
+          <h3 class="button-title">Unité</h3>
+          <div>
+            <!--<input @click="change('event')" type="radio" id="dataType1" name="dataType" value="event" checked>-->
+            <label class="event active" @click="change('event')" >Nombre d'évènements</label>
+          </div>
+          <div>
+            <!--<input @click="change('death')" type="radio" id="dataType2" name="dataType" value="death">-->
+            <label class="victims" @click="change('death')">Nombre de victimes</label>
+          </div>
+        </form>
     </div>
 </template>
 
@@ -61,18 +62,24 @@ export default {
         async change(type){
             let data
             if (type == 'event') {
+                document.querySelector('.event').classList.add('active')
+                document.querySelector('.victims').classList.remove('active')
+
                 data = await d3.csv(this.dataEventLocation);
                 this.makeData(data, type)
                 this.myChart.data.datasets.forEach((dataset) => {
                     dataset.label = "nombre d'évènements"
                 })
             } else if (type == 'death') {
+                document.querySelector('.event').classList.remove('active')
+                document.querySelector('.victims').classList.add('active')
+
                 data = await d3.csv(this.dataDeathLocation);
                 this.makeData(data, type)
                 this.myChart.data.datasets.forEach((dataset) => {
                     dataset.label = "nombre de morts par évènements"
                 })
-            } 
+            }
             this.myChart.data.labels = this.label
             this.myChart.data.datasets.forEach((dataset) => {
                 dataset.data = this.data;
@@ -99,22 +106,30 @@ export default {
                     datasets: [{
                         label: "nombre d'évènements",
                         data: this.data,
-                        backgroundColor: '#D0E8F2',
+                        backgroundColor: '#ff5c4b',
                         borderColor: 'rgba(255, 99, 132, 0)',
                         borderWidth: 1
                     }]
                 },
                 options: {
-                    aspectRatio: 2,
+                    aspectRatio: 1.33,
                     legend: {
                         display: true
                     },
                     scales: {
                         yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
+                          gridLines : {
+                            display : false
+                          },
+                          ticks: {
+                              beginAtZero: true
+                          }
+                        }],
+                      xAxes: [{
+                        gridLines : {
+                          display : false
+                        },
+                      }],
                     }
                 }
             });
@@ -126,12 +141,35 @@ export default {
 <style lang="scss" scoped>
 
 .button {
-    width: 20%;
     right:0;
+    padding-top: 30px;
+
+    h3 {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      color: #818181;
+    }
+
+    label {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      color: #456268;
+      cursor: pointer;
+
+      &.active {
+        color: #ff5c4b;
+      }
+    }
+
 }
 
 .chart-container {
-    height: 50vh;
+  height: 75vh;
+  width: 100vh;
 }
 
 </style>
