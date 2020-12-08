@@ -1,30 +1,29 @@
 <template>
   <div class="content">
+
     <div class="title">
       <h3 v-if="subTitle"> {{subTitle}}</h3>
       <h2> {{title}} </h2>
     </div>
-    <div class="no-line-bg"></div>
-    <div class="no-line-bg-bis"></div>
-    <BarChart class="graph"> </BarChart>
+    <GraphContainerPageThree class="graph"> </GraphContainerPageThree>
     <h2 class="page">{{page}}</h2>
   </div>
 </template>
 
 <script>
-    import BarChart from "./graph/BarChart";
+  import GraphContainerPageThree from "./GraphContainerPageThree";
 
-    export default {
-      name: "GraphDisplayPageTwo",
-      components: {
-        BarChart,
-      },
-      props: {
-        title: String,
-        subTitle: String,
-        page: String
-      }
+  export default {
+    name: "GraphDisplayPageThree",
+    components: {
+      GraphContainerPageThree
+    },
+    props: {
+      title: String,
+      subTitle: String,
+      page: String
     }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -49,8 +48,11 @@
     }
 
     .graph {
-      grid-column: 3 / 6;
+      grid-column: 5 / 8;
       grid-row: 2 / 4;
+      display: flex;
+      justify-content: end;
+      transform: translateX(-3vw);
     }
 
     .title {
@@ -86,16 +88,6 @@
         transform-origin: bottom left;
         width: 50vh;
       }
-    }
-    .no-line-bg {
-      grid-row: 2/4;
-      grid-column: 4/8;
-      background-color: #ffffff;
-    }
-    .no-line-bg-bis {
-      grid-row: 2/4;
-      grid-column: 3;
-      background-color: #ffffff;
     }
   }
 </style>

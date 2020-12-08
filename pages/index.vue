@@ -25,10 +25,24 @@
             > </RCfirst>
           </div>
           <div class="section">
-            <GraphDisplayPageOne title="Constat MONDE" page="01"> </GraphDisplayPageOne>
+            <GraphDisplayPageOne
+              title="Constat MONDE"
+              page="01">
+            </GraphDisplayPageOne>
           </div>
           <div class="section">
-            <GraphDisplayPageTwo title="France - 2019 " subTitle='Nombre d’évènements et de victimes par aléa en France en 2019' page="01"> </GraphDisplayPageTwo>
+            <GraphDisplayPageTwo
+              title="France - 2019 "
+              subTitle='Nombre d’évènements et de victimes par aléa en France en 2019'
+              page="01">
+            </GraphDisplayPageTwo>
+          </div>
+          <div class="section">
+            <GraphDisplayPageThree
+              title="France - 1974-2018"
+              subTitle='Population exposée à au moins une canicule dans l’été en France en millions d’habitants '
+              page="01">
+            </GraphDisplayPageThree>
           </div>
         </full-page>
       </div>
@@ -46,19 +60,22 @@
   import RCfirst from "../components/RCFirst.vue";
   import GraphDisplayPageOne from "../components/GraphDisplayPageOne";
   import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
+  import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
 
   export default {
     components: {
       GraphDisplay,
       RCfirst,
       GraphDisplayPageOne,
-      GraphDisplayPageTwo
+      GraphDisplayPageTwo,
+      GraphDisplayPageThree,
     },
     component() {
       GridBackground,
       RCfirst,
       GraphDisplayPageOne,
-      GraphDisplayPageTwo
+      GraphDisplayPageTwo,
+      GraphDisplayPageThree
     },
     data() {
       return {
