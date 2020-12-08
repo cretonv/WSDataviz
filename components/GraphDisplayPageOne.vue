@@ -2,13 +2,14 @@
   <div class="content">
 
     <div class="title">
-      <h2> {{title}} </h2>
       <h3 v-if="subTitle"> {{subTitle}}</h3>
+      <h2> {{title}} </h2>
     </div>
     <div class="no-line-bg"></div>
-    <div class="no-line-bg-bis"></div>
     <GraphContainer class="graph"> </GraphContainer>
     <h2 class="page">{{page}}</h2>
+    <div class="bg-pattern first"></div>
+    <div class="bg-pattern second"></div>
   </div>
 </template>
 
@@ -39,14 +40,15 @@
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 1px;
     grid-row-gap: 1px;
+    overflow: hidden;
 
     .page {
-      font-size: 144px;
-      color: #E7EFFF;
-      grid-row: 4;
-      grid-column: 7;
-      display: flex;
-      flex-flow: row-reverse;
+      position: absolute;
+      bottom: -50px;
+      right: -30px;
+      font-size: 200px;
+      line-height: 252px;
+      color: rgba(255, 54, 51, 0.24);
     }
 
     .graph {
@@ -97,6 +99,20 @@
       grid-row: 2/4;
       grid-column: 3;
       background-color: #ffffff;
+    }
+    .bg-pattern {
+      background-image: url("/ressources/img/svg/motif.svg");
+      background-size: cover;
+      opacity: 0.07;
+
+      &.first {
+        grid-row: 4;
+        grid-column: 1/4;
+      }
+      &.second {
+        grid-row: 1;
+        grid-column: 6/8;
+      }
     }
   }
 </style>

@@ -4,7 +4,7 @@
       <div class="content">
         <div class="nav">
           <div class="logo">
-            <img class="earth" src="ressources/icon/earth.svg">
+            <img class="earth" src="ressources/icon/red_round.svg">
           </div>
           <button class="points" @click="test('first')"> </button>
           <button class="points" @click="test('second')"> </button>
@@ -23,7 +23,8 @@
           </div>
           <div class="section">
             <GraphDisplayPageOne
-              title="Constat MONDE"
+              title="Évolution dans le monde entre 1950 et 2000 "
+              subTitle='Nombre d’évènements et de victimes par aléa en France en 2019 '
               page="01">
             </GraphDisplayPageOne>
           </div>

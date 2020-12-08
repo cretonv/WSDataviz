@@ -5,9 +5,16 @@
       <h2> {{title}} </h2>
     </div>
     <div class="no-line-bg"></div>
-    <div class="no-line-bg-bis"></div>
+    <div class="no-line-bg"></div>
+    <div class="no-line-bg"></div>
+    <div class="no-line-bg"></div>
+    <div class="bg-pattern first"></div>
+    <div class="bg-pattern second"></div>
     <BarChart class="graph"> </BarChart>
     <h2 class="page">{{page}}</h2>
+    <div class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
+    </div>
   </div>
 </template>
 
@@ -49,13 +56,12 @@
     }
 
     .graph {
-      grid-column: 3 / 6;
-      grid-row: 2 / 4;
+      grid-column: 3 / 7;
+      grid-row: 2 / 5;
     }
 
     .title {
-      margin-left: 65px;
-      grid-column: 2 / 5;
+      grid-column: 3 / 6;
       grid-row: 1;
       height: 100%;
       width: 100%;
@@ -87,15 +93,57 @@
         width: 50vh;
       }
     }
-    .no-line-bg {
-      grid-row: 2/4;
-      grid-column: 4/8;
-      background-color: #ffffff;
+    .page {
+      position: absolute;
+      bottom: -50px;
+      right: -30px;
+      font-size: 200px;
+      line-height: 252px;
+      color: rgba(255, 54, 51, 0.24);
     }
-    .no-line-bg-bis {
-      grid-row: 2/4;
-      grid-column: 3;
+    .no-line-bg {
+      grid-row: 2/5;
       background-color: #ffffff;
+
+      &:nth-of-type(5) {
+        grid-column: 3;
+      }
+      &:nth-of-type(2) {
+        grid-column: 4;
+      }
+      &:nth-of-type(3) {
+        grid-column: 5;
+      }
+      &:nth-of-type(4) {
+        grid-column: 6;
+      }
+    }
+    .bg-pattern {
+      background-image: url("/ressources/img/svg/motif.svg");
+      background-size: cover;
+      opacity: 0.07;
+
+      &.first {
+        grid-row: 4;
+        grid-column: 1/3;
+      }
+      &.second {
+        grid-row: 1/3;
+        grid-column: 7;
+      }
+    }
+    .paragraph {
+      grid-column: 7;
+      grid-row: 3;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #9D9D9D;
+      height: 100%;
+      width: 100%;
+      padding: 15px;
     }
   }
 </style>

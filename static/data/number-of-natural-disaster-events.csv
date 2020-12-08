@@ -1,16 +1,4 @@
 Entity,Year,Number_of_disasters
-All natural disasters,1950,23
-All natural disasters,1951,27
-All natural disasters,1952,24
-All natural disasters,1953,34
-All natural disasters,1954,33
-All natural disasters,1955,30
-All natural disasters,1956,36
-All natural disasters,1957,29
-All natural disasters,1958,23
-All natural disasters,1959,33
-All natural disasters,1960,40
-All natural disasters,1961,28
 All natural disasters,1962,28
 All natural disasters,1963,41
 All natural disasters,1964,60
@@ -69,8 +57,6 @@ All natural disasters,2016,325
 All natural disasters,2017,276
 All natural disasters,2018,282
 All natural disasters,2019,361
-Drought,1960,1
-Drought,1961,1
 Drought,1963,1
 Drought,1964,7
 Drought,1965,7
@@ -128,11 +114,6 @@ Drought,2016,15
 Drought,2017,7
 Drought,2018,13
 Drought,2019,15
-Extreme temperature,1951,2
-Extreme temperature,1953,3
-Extreme temperature,1955,1
-Extreme temperature,1958,2
-Extreme temperature,1961,1
 Extreme temperature,1962,1
 Extreme temperature,1963,2
 Extreme temperature,1965,1
@@ -185,18 +166,6 @@ Extreme temperature,2016,12
 Extreme temperature,2017,11
 Extreme temperature,2018,25
 Extreme temperature,2019,20
-Extreme weather,1950,7
-Extreme weather,1951,11
-Extreme weather,1952,10
-Extreme weather,1953,11
-Extreme weather,1954,10
-Extreme weather,1955,19
-Extreme weather,1956,14
-Extreme weather,1957,9
-Extreme weather,1958,13
-Extreme weather,1959,16
-Extreme weather,1960,20
-Extreme weather,1961,14
 Extreme weather,1962,13
 Extreme weather,1963,21
 Extreme weather,1964,22
@@ -255,18 +224,6 @@ Extreme weather,2016,84
 Extreme weather,2017,85
 Extreme weather,2018,84
 Extreme weather,2019,85
-Flood,1950,10
-Flood,1951,7
-Flood,1952,4
-Flood,1953,12
-Flood,1954,9
-Flood,1955,3
-Flood,1956,9
-Flood,1957,11
-Flood,1958,3
-Flood,1959,13
-Flood,1960,7
-Flood,1961,8
 Flood,1962,8
 Flood,1963,8
 Flood,1964,22
@@ -326,15 +283,6 @@ Flood,2017,114
 Flood,2018,109
 Flood,2019,170
 Impact,2013,1
-Wildfire,1911,1
-Wildfire,1918,1
-Wildfire,1922,1
-Wildfire,1929,1
-Wildfire,1939,1
-Wildfire,1944,2
-Wildfire,1947,1
-Wildfire,1949,1
-Wildfire,1956,1
 Wildfire,1965,1
 Wildfire,1966,1
 Wildfire,1967,2
