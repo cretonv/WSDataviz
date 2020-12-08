@@ -42,6 +42,11 @@
               page="01">
             </GraphDisplayPageThree>
           </div>
+          <div class="section">
+            <VariousStatsPageFour>
+
+            </VariousStatsPageFour>
+          </div>
         </full-page>
       </div>
   </div>
@@ -59,6 +64,7 @@
   import GraphDisplayPageOne from "../components/GraphDisplayPageOne";
   import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
   import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
+  import VariousStatsPageFour from "../components/VariousStatsPageFour";
 
   export default {
     components: {
@@ -67,6 +73,7 @@
       GraphDisplayPageOne,
       GraphDisplayPageTwo,
       GraphDisplayPageThree,
+      VariousStatsPageFour
     },
     component() {
       GridBackground,
