@@ -14,7 +14,7 @@
           <div class="section">
             <RCfirst
                title="Catastrophes climatiques"
-               paragraph="Definition catastrophes climatiques"
+               paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
                page="01"
                imageSrc="/ressources/img/image1.jpg"
                imageXPosition="1/4"
