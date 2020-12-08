@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-      <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.4fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
+      <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.6fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
         <div class="nav">
           <div class="logo">
@@ -16,12 +16,9 @@
                title="Catastrophes climatiques"
                paragraph="Definition catastrophes climatiques"
                page="01"
-               firstImageSrc="/ressources/img/image1.jpg"
-               secondImageSrc="/ressources/img/image2.jpg"
-               firstImageXPosition="1/3"
-               firstImageYPosition="6"
-               secondImageXPosition="3/6"
-               secondImageYPosition="5"
+               imageSrc="/ressources/img/image1.jpg"
+               imageXPosition="1/4"
+               imageYPosition="4/7"
             > </RCfirst>
           </div>
           <div class="section">

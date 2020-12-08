@@ -48,7 +48,7 @@ export default {
         },
         columns: {
             type: String,
-            default: '0.4fr repeat(6, 1fr) 0.4fr',
+            default: '0.4fr repeat(6, 1fr) 0.6fr',
             required: false
         },
     }
