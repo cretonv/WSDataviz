@@ -1,13 +1,13 @@
 <template>
   <div class="content">
-    <div class="title">
-      <h2> {{title}} </h2>
+    <div class="first-part-title-container">
+      <h2 class="first-part-title"> catas</h2>
     </div>
+    <h2 class="second-part-title"> trophes </h2>
     <div class="paragraph">
       <p> {{ paragraph }}</p>
     </div>
-    <div class="firstImage img" :style="getFirstImagePosition" ><img :src='firstImageSrc' alt=""></div>
-    <div class="secondImage img" :style="getSecondImagePosition" ><img :src='secondImageSrc' alt=""></div>
+    <div class="img" :style="getFirstImagePosition" ><img :src='imageSrc' alt=""></div>
     <h2 class="page">{{page}}</h2>
   </div>
 </template>
@@ -18,27 +18,18 @@
       props: {
         title: String,
         paragraph: String,
-        firstImageSrc: String,
-        firstImageXPosition: String,
-        firstImageYPosition: String,
-        secondImageSrc: String,
-        secondImageXPosition: String,
-        secondImageYPosition: String,
+        imageSrc: String,
+        imageXPosition: String,
+        imageYPosition: String,
         page: String
       },
       computed: {
         getFirstImagePosition() {
           return {
-            'grid-row': this.firstImageXPosition,
-            'grid-column': this.firstImageYPosition,
-          };
+            'grid-row': this.imageXPosition,
+            'grid-column': this.imageYPosition,
+          }
         },
-        getSecondImagePosition() {
-          return {
-            'grid-row': this.secondImageXPosition,
-            'grid-column': this.secondImageYPosition,
-          };
-        }
       }
     }
 </script>
@@ -50,7 +41,7 @@
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 0.4fr repeat(6, 1fr) 0.4fr;
+    grid-template-columns: 0.4fr repeat(6, 1fr) 0.6fr;
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 1px;
     grid-row-gap: 1px;
@@ -71,6 +62,8 @@
         object-fit: cover;
         filter: grayscale(100%);
         transition: all 0.3s;
+        transform: scale(1.16);
+        transform-origin: top left;
       }
 
       &:hover {
@@ -98,6 +91,39 @@
       color: black;
       font-size: 18px;
       font-family: 'Montserrat';
+    }
+    .first-part-title-container {
+      position: relative;
+      grid-row: 1/4;
+      grid-column: 2;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      .first-part-title {
+        position: absolute;
+        left: 95%;
+        bottom: 0;
+        transform-origin: bottom left;
+        transform: rotate(0.75turn) translateX(-0.8vw);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 8vw;
+        color: #FF3633;
+      }
+    }
+    .second-part-title {
+      position: absolute;
+      right: 83.5vw;
+      top: 0;
+      transform-origin: top right;
+      transform: rotate(0.75turn) translateX(1.5vw);
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 8vw;
+      color: #FF3633;
     }
   }
 </style>
