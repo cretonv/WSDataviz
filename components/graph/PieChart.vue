@@ -1,0 +1,95 @@
+<template>
+    <div>
+        <div class="chart-container">
+            <canvas id="tab">
+            </canvas>
+        </div>
+    </div>
+</template>
+
+<script>
+import Chart from 'chart.js';
+
+export default {
+    name: "PieChart",
+    props: {
+        title: String,
+        data: Array,
+        label: Array,
+        detaildata: Array,
+        detaillabel: Array,
+    },
+    data() {
+        return {
+            dataLocation: 'data/natural-disasters-by-type.csv',
+        }
+    },
+    computed: {
+        ctx() {
+            return document.getElementById('tab').getContext('2d')
+        }
+    },
+    async mounted() {
+        this.makeTab()
+    },
+    methods: {
+        getDetail(event, array){
+            if (array[0] && this.myChart.options.circumference == Math.PI * 2) {
+                console.log('get', this.detaillabel)
+                this.myChart.options.circumference = Math.PI;
+                this.myChart.data.datasets[0].data = this.detaildata[this.label[array[0]._index]]
+                this.myChart.data.labels = this.detaillabel[this.label[array[0]._index]]
+                this.myChart.update();
+            } else {
+                console.log('return')
+                this.myChart.options.circumference = Math.PI * 2;
+                this.myChart.data.datasets[0].data = this.data
+                this.myChart.data.labels = this.label
+                this.myChart.update();
+            }
+        },
+        makeTab() {
+            this.myChart = new Chart(this.ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: this.label,
+                    datasets: [{
+                        label: this.title,
+                        data: this.data,
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 99, 132, 1)',
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+                    onClick: (e, a) => this.getDetail(e, a),
+                    circumference: Math.PI * 2,
+                    rotation: 0,
+                    scales: {
+                    xAxes: [{
+                        gridLines: {
+                        drawOnChartArea: false
+                        }
+                    }]
+                    }
+                }
+            });
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+
+</style>

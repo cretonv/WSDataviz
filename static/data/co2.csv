@@ -1,0 +1,21 @@
+Type,Label,Data
+Global,Dechets,138,87
+Global,Procedes industriels et solvants,377,48
+Global,Agriculture,438,99
+Global,Utilisation d'energie,3367,82
+Utilisation d'energie,Residentiel et tertiaire,174
+Utilisation d'energie,Industrie manufacturiere et construction,500
+Utilisation d'energie,Transports,946
+Utilisation d'energie,Industries de l'energie,1179
+Agriculture,nada,50
+Agriculture,euuuu,51
+Agriculture,quepuique,52
+Agriculture,niente,53
+Procedes industriels et solvants,nada,8804
+Procedes industriels et solvants,euuuu,484
+Procedes industriels et solvants,quepuique,156
+Procedes industriels et solvants,niente,423
+Dechets,nada,8804
+Dechets,euuuu,484
+Dechets,quepuique,156
+Dechets,niente,423
