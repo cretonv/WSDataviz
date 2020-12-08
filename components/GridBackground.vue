@@ -61,7 +61,7 @@ export default {
     width: 100%;
     height: 100vh;
     display: grid;
-    background-color: #495464;
+    background-color: #C8C8C8;
     grid-column-gap: 1px;
     grid-row-gap: 1px;
 
