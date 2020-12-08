@@ -102,7 +102,7 @@
                   beginAtZero: true,
                   fontFamily: 'Montserrat',
                   fontSize: 13,
-                  stepSize: 50
+                  stepSize: 20
                 },
                 scaleLabel: {
                   display: true,
