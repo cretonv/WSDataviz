@@ -76,6 +76,11 @@
         font-family: 'Montserrat';
         font-weight: 800;
       }
+      h3 {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 18px;
+      }
     }
     .section-title {
       position: relative;

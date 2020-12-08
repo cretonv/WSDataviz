@@ -7,6 +7,11 @@
     </div>
     <GraphContainerPageThree class="graph"> </GraphContainerPageThree>
     <h2 class="page">{{page}}</h2>
+    <div class="bg-pattern first"></div>
+    <div class="bg-pattern second"></div>
+    <div class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
+    </div>
   </div>
 </template>
 
@@ -39,12 +44,12 @@
     grid-row-gap: 1px;
 
     .page {
-      font-size: 144px;
-      color: #E7EFFF;
-      grid-row: 4;
-      grid-column: 7;
-      display: flex;
-      flex-flow: row-reverse;
+      position: absolute;
+      bottom: -50px;
+      right: -30px;
+      font-size: 200px;
+      line-height: 252px;
+      color: rgba(255, 54, 51, 0.24);
     }
 
     .graph {
@@ -56,8 +61,7 @@
     }
 
     .title {
-      margin-left: 65px;
-      grid-column: 2 / 5;
+      grid-column: 3 / 6;
       grid-row: 1;
       height: 100%;
       width: 100%;
@@ -71,6 +75,11 @@
         font-size: 36px;
         font-family: 'Montserrat';
         font-weight: 800;
+      }
+      h3 {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-size: 18px;
       }
     }
     .section-title {
@@ -88,6 +97,36 @@
         transform-origin: bottom left;
         width: 50vh;
       }
+    }
+    .bg-pattern {
+      background-image: url("/ressources/img/svg/motif.svg");
+      background-size: cover;
+      opacity: 0.07;
+
+      &.first {
+        grid-row: 2/5;
+        grid-column: 3/5;
+      }
+      &.second {
+        grid-row: 1;
+        grid-column: 6/8;
+      }
+    }
+    .paragraph {
+      grid-column: 3;
+      grid-row: 4;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+      color: #ffffff;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      background-color: #FF3633;
+      transform-origin: bottom right;
+      transform: scale(1.25);
     }
   }
 </style>
