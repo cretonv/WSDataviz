@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <div class="hide-icon"> </div>
     <div class="first-part-title-container">
       <h2 class="first-part-title"> catas</h2>
     </div>
@@ -52,6 +53,12 @@
     grid-column-gap: 1px;
     grid-row-gap: 1px;
     overflow: hidden;
+
+    .hide-icon {
+      grid-row: 1;
+      grid-column: 8;
+      background-color: #ffffff;
+    }
 
     .page {
       grid-row: 4;

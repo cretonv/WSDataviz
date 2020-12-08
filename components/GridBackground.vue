@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="grid" :style="'grid-template-rows:'+rows+';grid-template-columns: '+columns+';'">
-      <div class="grid-element nav-numbers number"><span> 1 </span></div>
+      <div class="grid-element nav-numbers number"><span class="number-content"> 1 </span> <span class="menu-content"> CARTE <br> INTERACTIVE </span></div>
       <div class="grid-element nav-letters letter letter"> <span> A </span> </div>
       <div class="grid-element nav-letters letter letter"> <span> B </span> </div>
       <div class="grid-element nav-letters letter letter"> <span> C </span> </div>
@@ -9,7 +9,7 @@
       <div class="grid-element nav-letters letter letter"> <span> E </span> </div>
       <div class="grid-element nav-letters letter letter"> <span> F </span> </div>
       <div class="grid-element nav-letters letter letter"> <span> G </span> </div>
-      <div class="grid-element nav-numbers number"><span> 2 </span></div>
+      <div class="grid-element nav-numbers number"><span class="number-content"> 2 </span> <span class="menu-content"> CATASTROPHE <br> CLIMATIQUE </span></div>
       <div class="grid-element"></div>
       <div class="grid-element"></div>
       <div class="grid-element"></div>
@@ -17,7 +17,7 @@
       <div class="grid-element"></div>
       <div class="grid-element"></div>
       <div class="grid-element"></div>
-      <div class="grid-element nav-numbers number"><span> 3 </span></div>
+      <div class="grid-element nav-numbers number"><span class="number-content"> 3 </span> <span class="menu-content"> RECHAUFFEMENT <br> CLIMATIQUE </span></div>
       <div class="grid-element"></div>
       <div class="grid-element"></div>
       <div class="grid-element"></div>
@@ -88,8 +88,10 @@ export default {
   .nav-numbers {
     position: relative;
     background: white;
+    cursor: pointer;
+    z-index: 5;
 
-    span {
+    .number-content {
       position: absolute;
       bottom: 5px;
       left: 13px;
@@ -100,6 +102,19 @@ export default {
       color: #C8C8C8;
       transform: rotate(-0.25turn);
     }
-
+    .menu-content {
+      position: absolute;
+      bottom: 7px;
+      left: 88%;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 16px;
+      color: #14213D;
+      transform-origin: bottom left;
+      transform: rotate(-0.25turn);
+      cursor: pointer;
+    }
   }
 </style>
