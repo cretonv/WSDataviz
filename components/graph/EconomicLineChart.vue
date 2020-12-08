@@ -16,10 +16,16 @@
 
       }
     },
+    watch: {
+      labels: function () {
+        console.log('ICIIIII')
+      }
+    },
     mounted() {
       let ctx = this.$refs.myChart.getContext('2d')
       console.log('LABELS PUTAIN', this.labels)
       console.log('LABELS PUTAIN', this.entityAndDatas)
+
       new Chart(ctx, {
         type: 'line',
         option: {
@@ -64,7 +70,7 @@
             },
             {
               label: 'Sécheresse',
-              data: this.entityAndDatas['Drought'],
+              data: this.entityAndDatas.['Drought'],
               backgroundColor: [
                 'rgba(255, 99, 132, 0)',
               ],
@@ -186,8 +192,9 @@
 </script>
 
 <style lang="scss" scoped>
-.lineChart {
-  width: 125vh;
-  height: 50vh;
-}
+  .lineChart {
+    width: 125vh;
+    height: 50vh;
+  }
 </style>
+
