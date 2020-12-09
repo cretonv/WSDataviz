@@ -170,7 +170,7 @@
         position: absolute;
         bottom: 0;
         left: 77%;
-        font-weight: 400;
+        font-weight: 300;
         transform-origin: bottom left;
         transform: rotate(0.75turn);
         font-size: 5vw;
