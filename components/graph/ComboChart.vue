@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="chart-container">
-            <canvas id="tab">
+            <canvas id="tab-bis">
             </canvas>
         </div>
     </div>
@@ -27,7 +27,7 @@
     },
     computed: {
         ctx() {
-            return document.getElementById('tab').getContext('2d')
+            return document.getElementById('tab-bis').getContext('2d')
         }
     },
     async mounted() {
