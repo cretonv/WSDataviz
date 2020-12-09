@@ -114,8 +114,8 @@
     }
 
     .paragraph {
-      grid-column: 3 / 4;
-      grid-row: 4;
+      grid-column: 7;
+      grid-row: 3;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: normal;
@@ -212,8 +212,8 @@
       }
 
       &.first {
-        grid-row: 1/4;
-        grid-column: 2/4;
+        grid-row: 4;
+        grid-column: 1/4;
       }
       &.second {
         grid-row: 4;
