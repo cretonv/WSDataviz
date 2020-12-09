@@ -16,7 +16,7 @@
     data() {
         return {
             dataTempLocation: '/data/temp_over_year.csv',
-            dataEventLocation: '/data/number-of-natural-disaster-events.csv',
+            dataEventLocation: '/data/comboChartData.csv',
             title: 'CO2',
             typefirst: 'bar',
             datasfirst: [],
@@ -111,16 +111,17 @@
       },
       makeData(datafirst, datasecond) {
         datafirst.forEach(element => {
-          if(element["Year"] >= 1962 && element["Year"] <= 2018) {
+          if(parseInt(element["Year"]) >= 1962 && parseInt(element["Year"]) <= 2018) {
             this.datasfirst.push(parseFloat(element["Temp"]))
           }
         })
         datasecond.forEach(element => {
           if(parseInt(element["Year"]) >= 1962 && parseInt(element["Year"]) <= 2018 && element['Entity'] == 'All natural disasters') {
             this.label.push(element["Year"])
-            this.datassecond.push(parseInt(element["Number_of_disasters"]))
+            this.datassecond.push(parseInt(element["Number of disasters (EMDAT (2020))"]))
           }
         })
+        console.log(datasecond, this.datassecond, this.label)
       },
     }
   }
