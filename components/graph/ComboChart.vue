@@ -95,15 +95,48 @@
             ]
           },
           options: {
+            aspectRatio: 2.5,
+            legend: {
+              display: false
+            },
             scales: {
               yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Écart de température',
+                  fontFamily: 'Montserrat'
+                },
+                ticks: {
+                  beginAtZero: true,
+                  fontFamily: 'Montserrat',
+                  fontSize: 13
+                },
                 id: 'left-y-axis',
                 type: 'linear',
                 position: 'left'
               }, {
+                gridLines : {
+                  display : false
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Nombre de catastrophes',
+                  fontFamily: 'Montserrat'
+                },
+                ticks: {
+                  beginAtZero: true,
+                  stepSize: 100,
+                  fontFamily: 'Montserrat',
+                  fontSize: 13
+                },
                 id: 'right-y-axis',
                 type: 'linear',
                 position: 'right'
+              }],
+              xAxes: [{
+                gridLines : {
+                  display : false
+                },
               }]
             }
           }
@@ -128,4 +161,10 @@
 </script>
 
 <style lang="scss" scoped>
+  .chart-container {
+    canvas {
+      height: 50vh;
+      width: 125vh;
+    }
+  }
 </style>
