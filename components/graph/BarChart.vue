@@ -30,6 +30,7 @@ export default {
             dataDeathLocation: 'data/deaths-from-natural-disasters-by-type.csv',
             data: [],
             label: [],
+            labelName: "nombre d'évènements",
             myChart: null
         }
     },
@@ -68,7 +69,9 @@ export default {
                 data = await d3.csv(this.dataEventLocation);
                 this.makeData(data, type)
                 this.myChart.data.datasets.forEach((dataset) => {
+                    console.log('LE LABEL', this.labelName)
                     dataset.label = "nombre d'évènements"
+                    this.labelName = "nombre d'évènements"
                 })
             } else if (type == 'death') {
                 document.querySelector('.event').classList.remove('active')
@@ -78,8 +81,10 @@ export default {
                 this.makeData(data, type)
                 this.myChart.data.datasets.forEach((dataset) => {
                     dataset.label = "nombre de morts par évènements"
+                    this.labelName = "nombre de morts par évènements"
                 })
             }
+            this.myChart.options.scales.xAxes[0].scaleLabel.labelString = this.labelName
             this.myChart.data.labels = this.label
             this.myChart.data.datasets.forEach((dataset) => {
                 dataset.data = this.data;
@@ -114,7 +119,7 @@ export default {
                 options: {
                     aspectRatio: 1.33,
                     legend: {
-                        display: true
+                        display: false
                     },
                     scales: {
                         yAxes: [{
@@ -128,6 +133,11 @@ export default {
                       xAxes: [{
                         gridLines : {
                           display : false
+                        },
+                        scaleLabel: {
+                          display: true,
+                          labelString: this.labelName,
+                          fontFamily: 'Montserrat'
                         },
                       }],
                     }
