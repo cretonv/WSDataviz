@@ -127,7 +127,7 @@
         options: {
           licenseKey: 'my_key',
           menu: '#menu',
-          anchors: ['1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu']
+          anchors: ['Intro', '1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu']
         },
         page: "01"
       }
@@ -222,7 +222,7 @@
       .navleft{
         position: absolute;
         z-index: 6;
-        width: calc(100% / 7 * 1.6);
+        width: calc(100% / 7 * 0.4);
         height: 100vh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -231,7 +231,8 @@
         grid-row-gap: 0px;
 
         .points {
-          transform: translateY(-50%) translateX(-50%);
+          position: absolute;
+          transform: translateY(-50%) translateX(+50%);
           width: 13px;
           height: 13px;
           font-size: 0;
@@ -239,7 +240,7 @@
           background-color: #D3D3D3;
           border: 0;
           cursor: pointer;
-          margin-left: 50%;
+          right: 0;
 
           &:nth-of-type(1) {
             grid-row: 2;
