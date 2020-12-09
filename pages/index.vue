@@ -56,9 +56,10 @@
               imageSrc="/ressources/img/image11.jpg"
               imageXPosition="1/5"
               imageYPosition="2/5"
-            >
-
-            </SecondTitle>
+            > </SecondTitle>
+          </div>
+          <div class="section">
+            <GraphDisplayPageFive> </GraphDisplayPageFive>
           </div>
         </full-page>
       </div>
@@ -78,6 +79,7 @@
   import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
   import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
   import VariousStatsPageFour from "../components/VariousStatsPageFour";
+  import GraphDisplayPageFive from "../components/GraphDisplayPageFive";
 
   export default {
     components: {
@@ -86,7 +88,8 @@
       GraphDisplayPageOne,
       GraphDisplayPageTwo,
       GraphDisplayPageThree,
-      VariousStatsPageFour
+      VariousStatsPageFour,
+      GraphDisplayPageFive
     },
     component() {
       GridBackground,
