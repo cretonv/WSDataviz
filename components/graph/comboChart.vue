@@ -1,115 +1,114 @@
 <template>
-  <div class="lineChart">
-    <canvas ref="myChart">
-    </canvas>
-  </div>
+    <div>
+        <div class="chart-container">
+            <canvas id="tab">
+            </canvas>
+        </div>
+    </div>
 </template>
 
 <script>
+  import * as d3 from 'd3';
   import Chart from 'chart.js';
 
   export default {
-    name: "Combo",
-    props: {
-        title: String,
-        typefirst:String,
-        datasfirst: Array,
-        labelsfirst: Array,
-        typesecond: String,
-        datassecond: Array,
-        labelssecond: Array,
-    },
+    name: "ComboChart",
     data() {
-      return {
-      }
-    },
-    mounted() {
-      let ctx = this.$refs.myChart.getContext('2d')
-      new Chart(ctx, {
-        type: this.typefirst,
-        data: {
-          labels: this.title,
-          datasets: [
-            {
-              label: this.labelsfirst,
-              data: this.datasfirst,
-              backgroundColor: [
-                'rgba(208,232,242, 0)',
-              ],
-              borderColor: [
-                'rgba(255,199,181,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(2,40,53,1)',
-              pointBorderWidth: 2
-            },
-            {
-              label: this.labelssecond,
-              data: this.datassecond,
-              backgroundColor: [
-                'rgba(208,232,242, 0)',
-              ],
-              borderColor: [
-                'rgba(255,199,181,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(2,40,53,1)',
-              pointBorderWidth: 2,
-              type: this.typesecond
-            }
-          ]
-        },
-        options: {
-          aspectRatio: 2.5,
-          tooltips: {
-              mode: 'nearest'
-          },
-          layout: {
-            padding: {
-              top: 25,
-            }
-          },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true,
-                stepSize: 100,
-                fontFamily: 'Montserrat',
-                fontSize: 13
-
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'Nombre de catastrophes',
-                fontFamily: 'Montserrat'
-              }
-            }],
-            xAxes : [ {
-              ticks: {
-                fontFamily: 'Montserrat',
-                stepSize: 50
-              },
-              scaleLabel: {
-                display: true,
-                labelString: 'Années',
-                fontFamily: 'Montserrat'
-              },
-              scales : {
-                max: 10
-              }
-            } ]
-          },
-          legend: {
-            position: 'left',
-            labels: {
-              usePointStyle: true,
-              padding: 18
-            },
-          }
+        return {
+            dataTempLocation: '/data/temp_over_year.csv',
+            dataEventLocation: '/data/number-of-natural-disaster-events.csv',
+            title: 'CO2',
+            typefirst: 'bar',
+            datasfirst: [],
+            label: [],
+            typesecond: 'line',
+            datassecond: [],
         }
-      })
+    },
+    computed: {
+        ctx() {
+            return document.getElementById('tab').getContext('2d')
+        }
+    },
+    async mounted() {
+        let datafirst = await d3.csv(this.dataTempLocation);
+        let datasecond = await d3.csv(this.dataEventLocation);
+        this.makeData(datafirst, datasecond)
+        this.makeTab()
+    },
+    methods: {
+      makeTab() {
+        this.myChart = new Chart(this.ctx, {
+          type: this.typefirst,
+          data: {
+            labels: this.label,
+            datasets: [
+              {
+                label: 'Écart de température',
+                data: this.datasfirst,
+                backgroundColor: [
+                  'rgba(196,196,196,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(196,196,196,0.5)',
+                ],
+                borderColor: [
+                  'rgba(255,199,181,1)',
+                ],
+                yAxisID: 'left-y-axis'
+              },
+              {
+                label: 'event',
+                data: this.datassecond,
+                backgroundColor: [
+                  'rgba(208,232,242, 0)',
+                ],
+                borderColor: [
+                  'rgba(255,199,181,1)',
+                ],
+                yAxisID: 'right-y-axis',
+                type: this.typesecond
+              }
+            ]
+          },
+          options: {
+            scales: {
+              yAxes: [{
+                id: 'left-y-axis',
+                type: 'linear',
+                position: 'left'
+              }, {
+                id: 'right-y-axis',
+                type: 'linear',
+                position: 'right'
+              }]
+            }
+          }
+        })
+      },
+      makeData(datafirst, datasecond) {
+        datafirst.forEach(element => {
+          if(element["Year"] >= 1975 && element["Year"] <= 2018) {
+            this.datasfirst.push(parseFloat(element["Temp"]))
+          }
+        })
+        datasecond.forEach(element => {
+          if(parseInt(element["Year"]) >= 1975 && parseInt(element["Year"]) <= 2018 && element['Entity'] == 'All natural disasters') {
+            this.label.push(element["Year"])
+            this.datassecond.push(parseInt(element["Number_of_disasters"]))
+          }
+        })
+      },
     }
   }
 </script>
