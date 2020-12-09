@@ -62,7 +62,11 @@
             > </SecondTitle>
           </div>
           <div class="section">
-            <GraphDisplayPageFive> </GraphDisplayPageFive>
+            <GraphDisplayPageFive
+              title="Monde 1950 - 2020"
+              subTitle='Écarts des températures en C° sur la période 1950 - 20...'
+              page="02"
+              > </GraphDisplayPageFive>
           </div>
         </full-page>
       </div>
