@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="chart-container">
-            <canvas id="tab">
+            <canvas id="pie-tab">
             </canvas>
         </div>
     </div>
@@ -26,7 +26,7 @@ export default {
     },
     computed: {
         ctx() {
-            return document.getElementById('tab').getContext('2d')
+            return document.getElementById('pie-tab').getContext('2d')
         }
     },
     async mounted() {
