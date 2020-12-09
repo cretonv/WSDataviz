@@ -4,3 +4,25 @@
   font-weight: 400;
   src: url('../fonts/Montserrat/Montserrat-Medium.otf');
 }
+
+.bg-pattern {
+  animation-name: anim_motif;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  z-index: -1;
+}
+
+@keyframes anim_motif {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
