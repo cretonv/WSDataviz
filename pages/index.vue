@@ -197,7 +197,7 @@
     }
 
     #fullpage {
-      z-index: 10;
+      z-index: 5;
     }
 
     .background {
