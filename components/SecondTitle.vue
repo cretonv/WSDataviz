@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <audio id='glacierSound' src='/ressources/sound/glacier.mp3'/>
+    <audio id='mineSound' src='/ressources/sound/mine.mp3'/>
     <div class="hide-icon"> </div>
     <div class="first-part-title-container">
       <h2 class="first-part-title"> réchauf</h2>
@@ -45,11 +45,11 @@
     },
     methods: {
       getSound: () => {
-        let audio = document.querySelector('#glacierSound')
+        let audio = document.querySelector('#mineSound')
         audio.play()
       },
       stopSound: () => {
-        let audio = document.querySelector('#glacierSound')
+        let audio = document.querySelector('#mineSound')
         audio.pause()
       }
     }
