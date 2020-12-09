@@ -49,6 +49,7 @@
           </div>
         </full-page>
       </div>
+      <div :class="loading"></div>
   </div>
 </template>
 
@@ -84,6 +85,7 @@
     },
     data() {
       return {
+        loading: 'loading',
         options: {
           licenseKey: 'my_key',
           menu: '#menu',
@@ -92,10 +94,21 @@
         page: "01"
       }
     },
-    mounted() {},
+    async mounted() {
+      await this.waitforloading();
+      document.addEventListener('DOMContentLoaded',() => {
+          this.test('test the loading')
+      });
+    },
     methods: {
       test(test){
         console.log('test', test)
+      },
+      waitforloading() {
+        setTimeout(() => {
+          this.loading = 'loading stop'
+          console.log('testloading')
+        }, 3000)
       }
     },
   }
@@ -108,6 +121,21 @@
     margin-left: 0;
     width: 100%;
     height: 100vh;
+
+    .loading {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height:100vh;
+      top:0;
+      left:0;
+      background-color: white;
+    }
+
+    .stop {
+      transition-duration: 0.7s;
+      top: -100vh;
+    }
 
     .content {
 
