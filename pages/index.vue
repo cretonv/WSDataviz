@@ -1,5 +1,6 @@
 <template>
   <div class="body">
+      <div :class="loading"></div>
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.6fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
         <div class="nav">
@@ -49,7 +50,6 @@
           </div>
         </full-page>
       </div>
-      <div :class="loading"></div>
   </div>
 </template>
 
