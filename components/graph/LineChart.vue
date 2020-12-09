@@ -2,6 +2,9 @@
   <div class="lineChart">
     <canvas ref="myChart">
     </canvas>
+    <div v-if="addDataCounter < 2" class="buttonChangeDatas" @click="displayOtherDatas">
+      Click on me
+    </div>
   </div>
 </template>
 
@@ -13,36 +16,14 @@
     props:['labels', 'entityAndDatas'],
     data() {
       return {
-
+        myChart: null,
+        addDataCounter: 0
       }
     },
-    mounted() {
-      let ctx = this.$refs.myChart.getContext('2d')
-      console.log('LABELS PUTAIN', this.labels)
-      console.log('LABELS PUTAIN', this.entityAndDatas)
-      new Chart(ctx, {
-        type: 'line',
-        option: {
-          responsive: true,
-          maintainAspectRatio: false
-        },
-        data: {
-          labels: this.labels,
-          datasets: [
-            {
-              label: 'Toutes les catastrophes naturels',
-              data: this.entityAndDatas['All natural disasters'],
-              backgroundColor: [
-                'rgba(208,232,242, 0)',
-              ],
-              borderColor: [
-                'rgba(255,199,181,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(2,40,53,1)',
-              pointBorderWidth: 2
-            },
+    methods: {
+      displayOtherDatas: function() {
+        if(this.addDataCounter === 0) {
+          this.myChart.data.datasets.push(
             {
               label: 'Innondation',
               data: this.entityAndDatas['Flood'],
@@ -57,6 +38,58 @@
               pointBorderColor: 'rgba(255,54,51,1)',
               pointBorderWidth: 2
             },
+            {
+              label: 'Météo Extrême',
+              data: this.entityAndDatas['Extreme weather'],
+              backgroundColor: [
+                'rgba(255, 159, 64, 0)'
+              ],
+              borderColor: [
+                'rgb(196,196,196,1)',
+              ],
+              borderWidth: 3,
+              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+              pointBorderColor: 'rgba(196,196,196,1)',
+              pointBorderWidth: 2
+            },
+          )
+          this.myChart.update()
+          this.addDataCounter ++;
+        } else if(this.addDataCounter === 1) {
+          this.myChart.data.datasets.push(
+            {
+              label: 'Toutes les catastrophes naturels',
+              data: this.entityAndDatas['All natural disasters'],
+              backgroundColor: [
+                'rgba(208,232,242, 0)',
+              ],
+              borderColor: [
+                'rgba(255,199,181,1)',
+              ],
+              borderWidth: 3,
+              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
+              pointBorderColor: 'rgba(2,40,53,1)',
+              pointBorderWidth: 2
+            }
+          )
+          this.myChart.update()
+          this.addDataCounter ++
+        }
+      }
+    },
+    mounted() {
+      let ctx = this.$refs.myChart.getContext('2d')
+      console.log('LABELS PUTAIN', this.labels)
+      console.log('LABELS PUTAIN', this.entityAndDatas)
+      this.myChart = new Chart(ctx, {
+        type: 'line',
+        option: {
+          responsive: true,
+          maintainAspectRatio: false
+        },
+        data: {
+          labels: this.labels,
+          datasets: [
             {
               label: 'Sécheresse',
               data: this.entityAndDatas['Drought'],
@@ -97,20 +130,6 @@
               borderWidth: 3,
               pointBackgroundColor: 'rgba(255, 255, 255, 1)',
               pointBorderColor: 'rgba(77,77,77,1)',
-              pointBorderWidth: 2
-            },
-            {
-              label: 'Météo Extrême',
-              data: this.entityAndDatas['Extreme weather'],
-              backgroundColor: [
-                'rgba(255, 159, 64, 0)'
-              ],
-              borderColor: [
-                'rgb(196,196,196,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(196,196,196,1)',
               pointBorderWidth: 2
             },
           ]
