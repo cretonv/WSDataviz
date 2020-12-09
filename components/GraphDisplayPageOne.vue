@@ -129,7 +129,7 @@
       flex-flow: column-reverse;
 
       h2 {
-        color: black;
+        color: #FF3633;
         font-size: 36px;
         font-family: 'Montserrat';
         font-weight: 800;

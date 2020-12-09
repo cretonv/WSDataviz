@@ -8,8 +8,8 @@
     <div class="no-line-bg"></div>
     <div class="no-line-bg"></div>
     <div class="no-line-bg"></div>
+    <div class="photo"></div>
     <div class="bg-pattern first"></div>
-    <div class="bg-pattern second"></div>
     <BarChart class="graph"> </BarChart>
     <h2 class="page">{{page}}</h2>
     <div class="paragraph">
@@ -45,6 +45,7 @@
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 1px;
     grid-row-gap: 1px;
+    overflow: hidden;
 
     .page {
       font-size: 144px;
@@ -71,7 +72,7 @@
       flex-flow: column-reverse;
 
       h2 {
-        color: black;
+        color: #FF3633;
         font-size: 36px;
         font-family: 'Montserrat';
         font-weight: 800;
@@ -129,12 +130,24 @@
       opacity: 0.07;
 
       &.first {
-        grid-row: 4;
-        grid-column: 1/3;
+        grid-row: 1 / 4;
+        grid-column: 1 / 3;
       }
-      &.second {
-        grid-row: 1/3;
-        grid-column: 7;
+    }
+    .photo {
+      background-image: url("/ressources/img/image9.jpg");
+      background-size: cover;
+      background-position: center;
+      transform-origin: top left;
+      transform: scale(0.75) translateX(4.7vw) translateY(17.9vh);
+      grid-column: 2;
+      grid-row: 3/5;
+      filter: grayscale(1);
+      transition: all 0.5s;
+
+      &:hover {
+        filter: grayscale(0);
+        transition: all 0.5s;
       }
     }
     .paragraph {
