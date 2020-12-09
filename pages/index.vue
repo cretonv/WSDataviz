@@ -87,7 +87,7 @@
         options: {
           licenseKey: 'my_key',
           menu: '#menu',
-          anchors: ['page1', 'page2', 'page3']
+          anchors: ['1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu']
         },
         page: "01"
       }
