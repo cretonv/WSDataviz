@@ -70,7 +70,7 @@
           </div>
         </full-page>
       </div>
-      <Credit :class="CreditOpen"></Credit>
+      <Credit @close="openCredit()" :class="CreditOpen"></Credit>
   </div>
 </template>
 
@@ -167,11 +167,11 @@
       transition-duration: 0.7s;
 
       &.isOpen {
-        top: -100vh;
+        top: 0;
       }
 
       &.isNotOpen {
-        top: 0;
+        top: -100vh;
       }
     }
 

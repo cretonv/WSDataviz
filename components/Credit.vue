@@ -1,5 +1,8 @@
 <template>
   <div class="content">
+    <div class="nav">
+      <img src="">
+    </div>
   </div>
 </template>
 
@@ -19,6 +22,6 @@
 
 <style lang="scss" scoped>
     .content {
-        background-color: white;
+        background-color: red;
     }
 </style>
