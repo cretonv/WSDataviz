@@ -3,13 +3,15 @@
       <div :class="loading"></div>
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.6fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
-        <div class="nav">
-          <div class="logo">
-            <img class="earth" @click="openCredit()" src="ressources/icon/red_round.svg">
-          </div>
+        <div class="navleft">
           <button class="points" href="#map"> </button>
           <button class="points" href="#1CCTitre"> </button>
           <button class="points" href="#2RCTitre"> </button>
+        </div>
+        <div class="navright">
+          <div class="logo">
+            <img class="earth" @click="openCredit()" src="ressources/icon/red_round.svg">
+          </div>
         </div>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
@@ -192,33 +194,34 @@
 
     .content {
 
-      .nav{
+      .logo {
+        width: calc(100% / 7 * 0.6);
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 6;
+        text-align: center;
+
+        .earth {
+          margin-top: 30px;
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+
+      .navleft{
         position: absolute;
         z-index: 6;
-        width: 100%;
+        width: calc(100% / 7 * 1.6);
         height: 100vh;
         display: grid;
-        grid-template-columns: 0.4fr repeat(6, 1fr) 0.6fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 1px;
-        grid-row-gap: 1px;
-
-        .logo {
-          grid-column: 8 / 9;
-          grid-row: 1 / 2;
-          z-index: 4;
-          text-align: center;
-
-          .earth {
-            margin-top: 30px;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-          }
-        }
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
 
         .points {
-          cursor: pointer;
           transform: translateY(-50%) translateX(-50%);
           width: 13px;
           height: 13px;
@@ -226,18 +229,19 @@
           border-radius: 100%;
           background-color: #D3D3D3;
           border: 0;
-          grid-column: 2;
+          cursor: pointer;
+          margin-left: 50%;
 
           &:nth-of-type(1) {
-            grid-row: 3;
+            grid-row: 2;
           }
 
           &:nth-of-type(2) {
-            grid-row: 4;
+            grid-row: 3;
           }
 
           &:nth-of-type(3) {
-            grid-row: 2;
+            grid-row: 4;
           }
         }
       }
