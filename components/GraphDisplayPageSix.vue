@@ -12,7 +12,8 @@
       </svg>
     </div>
     <div class="bg-pattern first"></div>
-    <PieChart class="graph"> </PieChart>
+    <div class="bg-pattern second"></div>
+    <PieChartContainer class="graph"> </PieChartContainer>
     <h2 class="page">{{page}}</h2>
     <div class="paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
@@ -21,12 +22,12 @@
 </template>
 
 <script>
-  import PieChart from "./graph/PieChart";
+  import PieChartContainer from "./PieChartContainer";
 
   export default {
     name: "GraphDisplayPageSix",
     components: {
-      PieChart,
+      PieChartContainer,
     },
     props: {
       title: String,
@@ -73,8 +74,8 @@
     }
 
     .graph {
-      grid-column: 1/5;
-      grid-row: 4/8;
+      grid-row: 1/5;
+      grid-column: 5/9;
     }
 
     .title {
@@ -149,6 +150,10 @@
       &.first {
         grid-row: 1 / 4;
         grid-column: 1 / 3;
+      }
+      &.second {
+        grid-row: 2/5;
+        grid-column: 6/9;
       }
     }
     .photo {

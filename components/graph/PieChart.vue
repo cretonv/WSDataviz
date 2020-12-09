@@ -41,7 +41,6 @@ export default {
                 this.myChart.data.labels = this.detaillabel[this.label[array[0]._index]]
                 this.myChart.update();
             } else {
-                console.log('return')
                 this.myChart.options.circumference = Math.PI * 2;
                 this.myChart.data.datasets[0].data = this.data
                 this.myChart.data.labels = this.label
@@ -66,17 +65,28 @@ export default {
                     }]
                 },
                 options: {
-                    events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
-                    onClick: (e, a) => this.getDetail(e, a),
-                    circumference: Math.PI * 2,
-                    rotation: 0,
-                    scales: {
+                  events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+                  onClick: (e, a) => this.getDetail(e, a),
+                  circumference: Math.PI * 2,
+                  rotation: 0,
+                  scales: {
                     xAxes: [{
                         gridLines: {
-                        drawOnChartArea: false
-                        }
-                    }]
-                    }
+                        drawOnChartArea: false,
+                          display: false
+                        },
+                      ticks: {
+                          display: false
+                      }
+                    }],
+                  },
+                  legend: {
+                    position: 'bottom',
+                    labels: {
+                      usePointStyle: true,
+                      padding: 10
+                    },
+                  }
                 }
             });
         }
@@ -88,8 +98,9 @@ export default {
 
 .chart-container {
 
-    #tab {
-        height: 100%;
+    #pie-tab {
+      height: auto !important;
+      width: 53vw !important;
     }
 }
 
