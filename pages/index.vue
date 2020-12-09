@@ -70,6 +70,13 @@
               page="02"
               > </GraphDisplayPageFive>
           </div>
+          <div class="section">
+            <GraphDisplayPageSix
+              title="L’être humain dans tout ça ?"
+              subTitle='Répartition des émissions de CO2 par secteurs en France en 2017'
+              page="02"
+            > </GraphDisplayPageSix>
+          </div>
         </full-page>
       </div>
       <Credit @close="openCredit()" :class="CreditOpen"></Credit>
@@ -92,6 +99,7 @@
   import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
   import VariousStatsPageFour from "../components/VariousStatsPageFour";
   import GraphDisplayPageFive from "../components/GraphDisplayPageFive";
+  import GraphDisplayPageSix from "../components/GraphDisplayPageSix";
 
   export default {
     components: {
@@ -102,7 +110,8 @@
       GraphDisplayPageTwo,
       GraphDisplayPageThree,
       VariousStatsPageFour,
-      GraphDisplayPageFive
+      GraphDisplayPageFive,
+      GraphDisplayPageSix
     },
     component() {
       GridBackground,
@@ -219,7 +228,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 0px;
-        grid-row-gap: 0px; 
+        grid-row-gap: 0px;
 
         .points {
           transform: translateY(-50%) translateX(-50%);
