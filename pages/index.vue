@@ -5,11 +5,11 @@
       <div class="content">
         <div class="nav">
           <div class="logo">
-            <img class="earth" src="ressources/icon/red_round.svg">
+            <img class="earth" @click="openCredit()" src="ressources/icon/red_round.svg">
           </div>
-          <button class="points" @click="test('first')"> </button>
-          <button class="points" @click="test('second')"> </button>
-          <button class="points" @click="test('third')"> </button>
+          <button class="points" href="#map"> </button>
+          <button class="points" href="#1CCTitre"> </button>
+          <button class="points" href="#2RCTitre"> </button>
         </div>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
@@ -66,6 +66,7 @@
           </div>
         </full-page>
       </div>
+      <Credit :class="CreditOpen"></Credit>
   </div>
 </template>
 
@@ -78,7 +79,8 @@
   import GridBackground from "../components/GridBackground.vue";
   import GraphDisplay from "../components/GraphDisplayPageOne.vue";
   import RCfirst from "../components/RCFirst.vue";
-  import Intro from "../components/intro.vue";
+  import Credit from "../components/Credit.vue";
+  import Intro from "../components/Intro.vue";
   import GraphDisplayPageOne from "../components/GraphDisplayPageOne";
   import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
   import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
@@ -106,6 +108,7 @@
     data() {
       return {
         loading: 'loading',
+        CreditOpen: 'Credit isNotOpen',
         options: {
           licenseKey: 'my_key',
           menu: '#menu',
@@ -129,6 +132,15 @@
           this.loading = 'loading stop'
           console.log('testloading')
         }, 3000)
+      },
+      openCredit() {
+        if (this.CreditOpen == 'Credit isNotOpen') {
+          console.log('open credit')
+          this.CreditOpen = 'Credit isOpen'
+        } else if (this.CreditOpen = 'Credit isOpen') {
+          console.log('close credit')
+          this.CreditOpen = 'Credit isNotOpen'
+        }
       }
     },
   }
@@ -141,6 +153,23 @@
     margin-left: 0;
     width: 100%;
     height: 100vh;
+
+    .Credit {
+      position: absolute;
+      z-index: 7;
+      width: 100%;
+      height: 100vh;
+      left:0;
+      transition-duration: 0.7s;
+
+      &.isOpen {
+        top: -100vh;
+      }
+
+      &.isNotOpen {
+        top: 0;
+      }
+    }
 
     .loading {
       position: absolute;
@@ -161,7 +190,7 @@
 
       .nav{
         position: absolute;
-        z-index: 1;
+        z-index: 6;
         width: 100%;
         height: 100vh;
         display: grid;
@@ -169,6 +198,44 @@
         grid-template-rows: repeat(4, 1fr);
         grid-column-gap: 1px;
         grid-row-gap: 1px;
+
+        .logo {
+          grid-column: 8 / 9;
+          grid-row: 1 / 2;
+          z-index: 4;
+          text-align: center;
+
+          .earth {
+            margin-top: 30px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+          }
+        }
+
+        .points {
+          cursor: pointer;
+          transform: translateY(-50%) translateX(-50%);
+          width: 13px;
+          height: 13px;
+          font-size: 0;
+          border-radius: 100%;
+          background-color: #D3D3D3;
+          border: 0;
+          grid-column: 2;
+
+          &:nth-of-type(1) {
+            grid-row: 3;
+          }
+
+          &:nth-of-type(2) {
+            grid-row: 4;
+          }
+
+          &:nth-of-type(3) {
+            grid-row: 2;
+          }
+        }
       }
 
       #fullpage{
@@ -179,41 +246,6 @@
         }
       }
 
-      .logo {
-        grid-column: 8 / 9;
-        grid-row: 1 / 2;
-        text-align: center;
-
-        .earth {
-          margin-top: 30px;
-          width: 50px;
-          height: 50px;
-        }
-      }
-
-      .points {
-        cursor: pointer;
-        transform: translateY(-50%) translateX(-50%);
-        width: 13px;
-        height: 13px;
-        font-size: 0;
-        border-radius: 100%;
-        background-color: #D3D3D3;
-        border: 0;
-        grid-column: 2;
-
-        &:nth-of-type(1) {
-          grid-row: 3;
-        }
-
-        &:nth-of-type(2) {
-          grid-row: 4;
-        }
-
-        &:nth-of-type(3) {
-          grid-row: 2;
-        }
-      }
     }
 
     #fullpage {
