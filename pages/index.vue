@@ -13,6 +13,9 @@
         </div>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
+            <Intro> </Intro>
+          </div>
+          <div class="section">
             <RCfirst
                title="Catastrophes climatiques"
                paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
@@ -75,6 +78,7 @@
   import GridBackground from "../components/GridBackground.vue";
   import GraphDisplay from "../components/GraphDisplayPageOne.vue";
   import RCfirst from "../components/RCFirst.vue";
+  import Intro from "../components/intro.vue";
   import GraphDisplayPageOne from "../components/GraphDisplayPageOne";
   import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
   import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
@@ -85,6 +89,7 @@
     components: {
       GraphDisplay,
       RCfirst,
+      Intro,
       GraphDisplayPageOne,
       GraphDisplayPageTwo,
       GraphDisplayPageThree,
