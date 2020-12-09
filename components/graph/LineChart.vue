@@ -2,8 +2,11 @@
   <div class="lineChart">
     <canvas ref="myChart">
     </canvas>
-    <div v-if="addDataCounter < 2" class="buttonChangeDatas" @click="displayOtherDatas">
-      Click on me
+    <div class="text">
+      Entre les années 1960 et 2000 nous observons une tendance à la hausse du nombre de sécheresse, feux de fôret ainsi que température extrêmes.
+      <div v-if="addDataCounter < 2" class="buttonChangeDatas" @click="displayOtherDatas">
+        Click on me
+      </div>
     </div>
   </div>
 </template>
@@ -135,7 +138,7 @@
           ]
         },
         options: {
-          aspectRatio: 2.5,
+          aspectRatio: 2,
           layout: {
             padding: {
               top: 25,
@@ -175,7 +178,7 @@
             } ]
           },
           legend: {
-            position: 'left',
+            position: 'bottom',
             labels: {
               usePointStyle: true,
               padding: 18
@@ -200,8 +203,27 @@
 </script>
 
 <style lang="scss" scoped>
-.lineChart {
-  width: 125vh;
-  height: 50vh;
-}
+  .lineChart {
+    width: 100vh;
+    height: 50vh;
+  }
+  .text {
+    max-width: 14vw;
+    padding: 20px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #414141;
+
+    .buttonChangeDatas {
+      color: #ffffff;
+      background-color: #FF3633;
+      border-radius: 20px;
+      width: fit-content;
+      padding: 10px;
+      margin-top: 25px;
+      text-transform: capitalize;
+      cursor: pointer;
+     float: right;
+    }
+  }
 </style>

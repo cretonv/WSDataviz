@@ -52,8 +52,8 @@
     }
 
     .graph {
-      grid-column: 3 / 6;
-      grid-row: 2 / 4;
+      grid-column: 4 / 6;
+      grid-row: 2 / 5;
     }
 
     .title {
