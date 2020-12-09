@@ -47,6 +47,19 @@
                 label: 'Écart de température',
                 data: this.datasfirst,
                 backgroundColor: [
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(196,196,196,0.5)',
                   'rgba(196,196,196,0.5)',
                   'rgba(196,196,196,0.5)',
                   'rgba(196,196,196,0.5)',
@@ -98,12 +111,12 @@
       },
       makeData(datafirst, datasecond) {
         datafirst.forEach(element => {
-          if(element["Year"] >= 1975 && element["Year"] <= 2018) {
+          if(element["Year"] >= 1962 && element["Year"] <= 2018) {
             this.datasfirst.push(parseFloat(element["Temp"]))
           }
         })
         datasecond.forEach(element => {
-          if(parseInt(element["Year"]) >= 1975 && parseInt(element["Year"]) <= 2018 && element['Entity'] == 'All natural disasters') {
+          if(parseInt(element["Year"]) >= 1962 && parseInt(element["Year"]) <= 2018 && element['Entity'] == 'All natural disasters') {
             this.label.push(element["Year"])
             this.datassecond.push(parseInt(element["Number_of_disasters"]))
           }
