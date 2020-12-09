@@ -74,11 +74,13 @@
       },
       forceRerender() {
         this.componentKey += 1;
+      },
+      changePhotos() {
+        this.$parent.changePhotos()
       }
     },
     watch: {
       labels: function () {
-        console.log('CAHNGE')
         this.forceRerender()
       },
       entityAndDatas: function () {

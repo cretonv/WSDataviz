@@ -6,6 +6,9 @@
       <h2> {{title}} </h2>
     </div>
     <div class="no-line-bg"></div>
+    <div class="photo first"></div>
+    <div class="photo second hidden"></div>
+    <div class="photo third hidden"></div>
     <GraphContainer class="graph"> </GraphContainer>
     <h2 class="page">{{page}}</h2>
     <div class="bg-pattern first"></div>
@@ -24,8 +27,25 @@
       props: {
         title: String,
         subTitle: String,
-        page: String
-      }
+        page: String,
+      },
+      data() {
+        return {
+          photoSrc: '/ressources/image6.jpg',
+          photoCounter: 0
+        }
+      },
+      methods: {
+        changePhotos() {
+          if(this.photoCounter === 0) {
+            document.querySelector(".photo.second").classList.remove('hidden')
+            this.photoCounter ++
+          } else if (this.photoCounter === 1) {
+            document.querySelector(".photo.third").classList.remove('hidden')
+            this.photoCounter ++
+          }
+        }
+      },
     }
 </script>
 
@@ -56,9 +76,50 @@
       grid-row: 2 / 5;
     }
 
+    .photo {
+      background-size: cover;
+      background-position: center;
+      width: 8.15vw;
+      height: 36vh;
+      transition: all 0.5s;
+      opacity: 1;
+      filter: grayscale(1);
+
+      &.first {
+        background-image: url("/ressources/img/image6.jpg");
+        grid-column: 2;
+        grid-row: 1 /3;
+        margin-left: 6.15vw;
+      }
+      &.second {
+        background-image: url("/ressources/img/image8.jpg");
+        grid-column: 3;
+        grid-row: 2 /4;
+        margin-left: 1vw;
+        height: 32vh;
+      }
+      &.third {
+        background-image: url("/ressources/img/image7.jpg");
+        grid-column: 2;
+        grid-row: 2 / 4;
+        margin-left: 6.15vw;
+        margin-top: 14vh;
+        height: 34vh;
+      }
+
+      &.hidden {
+        opacity: 0;
+        transition: all 0.5s;
+      }
+      &:hover {
+        filter: grayscale(0);
+        transition: all 0.5s;
+      }
+    }
+
     .title {
-      margin-left: 65px;
-      grid-column: 2 / 5;
+      margin-left: 5px;
+      grid-column: 4 / 7;
       grid-row: 1;
       height: 100%;
       width: 100%;

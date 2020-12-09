@@ -48,11 +48,11 @@
                 'rgba(255, 159, 64, 0)'
               ],
               borderColor: [
-                'rgb(196,196,196,1)',
+                'rgba(208,3,0,1)',
               ],
               borderWidth: 3,
               pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(196,196,196,1)',
+              pointBorderColor: 'rgba(208,3,0,1)',
               pointBorderWidth: 2
             },
           )
@@ -67,17 +67,18 @@
                 'rgba(208,232,242, 0)',
               ],
               borderColor: [
-                'rgba(255,199,181,1)',
+                'rgba(255,54,51,1)',
               ],
               borderWidth: 3,
               pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(2,40,53,1)',
+              pointBorderColor: 'rgba(255,54,51,1)',
               pointBorderWidth: 2
             }
           )
           this.myChart.update()
           this.addDataCounter ++
         }
+        this.$parent.changePhotos()
       }
     },
     mounted() {
@@ -94,38 +95,10 @@
           labels: this.labels,
           datasets: [
             {
-              label: 'Sécheresse',
-              data: this.entityAndDatas['Drought'],
+              label: 'Sécheresse & Feu de forêt & Température extrême',
+              data: this.entityAndDatas['Minor'],
               backgroundColor: [
                 'rgba(255, 99, 132, 0)',
-              ],
-              borderColor: [
-                'rgba(255,82,80,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(255,82,80,1)',
-              pointBorderWidth: 2
-            },
-            {
-              label: 'Feu de forêt',
-              data: this.entityAndDatas['Wildfire'],
-              backgroundColor: [
-                'rgba(208,3,0,0)'
-              ],
-              borderColor: [
-                'rgba(208,3,0,1)',
-              ],
-              borderWidth: 3,
-              pointBackgroundColor: 'rgba(255, 255, 255, 1)',
-              pointBorderColor: 'rgba(208,3,0,1)',
-              pointBorderWidth: 2
-            },
-            {
-              label: 'Température extrême',
-              data: this.entityAndDatas['Extreme temperature'],
-              backgroundColor: [
-                'rgba(255, 159, 64, 0)'
               ],
               borderColor: [
                 'rgba(77,77,77,1)',
