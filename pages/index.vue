@@ -48,6 +48,18 @@
 
             </VariousStatsPageFour>
           </div>
+          <div class="section">
+            <SecondTitle
+              title="Catastrophes climatiques"
+              paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
+              page="02"
+              imageSrc="/ressources/img/image11.jpg"
+              imageXPosition="1/5"
+              imageYPosition="2/5"
+            >
+
+            </SecondTitle>
+          </div>
         </full-page>
       </div>
   </div>
