@@ -27,7 +27,6 @@ export default {
     data() {
         return {
             dataEventLocation: 'data/natural-disasters-by-type.csv',
-            dataDeathLocation: 'data/deaths-from-natural-disasters-by-type.csv',
             data: [],
             label: [],
             labelName: "nombre d'évènements",
@@ -49,15 +48,14 @@ export default {
             this.data = []
             this.label = []
             data.forEach(element => {
-                if (element.Year == 2019 && element.Entity != 'All natural disasters'){
-                    if(type == 'event'){
-                        this.data.push(parseInt(element["Number of disasters (EMDAT (2020))"]))
-                    } else if(type == 'death'){
-                        this.data.push(parseInt(element["Total deaths (EMDAT (2020))"]))
-                    }
-                    this.label.push(element.Entity)
+                if(type == 'event'){
+                    this.data.push(parseInt(element["Event"]))
+                } else if(type == 'death'){
+                    this.data.push(parseInt(element["Death"]))
                 }
+                this.label.push(element.Type)
             })
+            console.log('TEST', this.data, this.label)
             this.sorting()
         },
         async change(type){
@@ -69,7 +67,6 @@ export default {
                 data = await d3.csv(this.dataEventLocation);
                 this.makeData(data, type)
                 this.myChart.data.datasets.forEach((dataset) => {
-                    console.log('LE LABEL', this.labelName)
                     dataset.label = "nombre d'évènements"
                     this.labelName = "nombre d'évènements"
                 })
@@ -77,7 +74,7 @@ export default {
                 document.querySelector('.event').classList.remove('active')
                 document.querySelector('.victims').classList.add('active')
 
-                data = await d3.csv(this.dataDeathLocation);
+                data = await d3.csv(this.dataEventLocation);
                 this.makeData(data, type)
                 this.myChart.data.datasets.forEach((dataset) => {
                     dataset.label = "nombre de morts par évènements"
@@ -99,8 +96,15 @@ export default {
             let sortedLabel = []
             this.data.sort(function(a, b){return b-a})
             for (let i = 0; i < this.data.length; i++) {
-                sortedLabel.push(this.label[temp.indexOf(this.data[i])])
+                let idx = temp.indexOf(this.data[i]);
+                while (idx != -1) {
+                    if(sortedLabel.indexOf(this.label[idx]) == -1) {
+                        sortedLabel.push(this.label[idx]);
+                    }
+                    idx = temp.indexOf(this.data[i], idx + 1);
+                }
             }
+            console.log('temp', temp, this.data, sortedLabel, this.label)
             this.label = sortedLabel
         },
         makeTab() {
