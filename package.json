@@ -16,7 +16,8 @@
     "d3": "^6.3.0",
     "nuxt": "^2.14.6",
     "nuxt-fullpage.js": "0.0.3",
-    "vue-fullpage": "^2.0.5"
+    "vue-fullpage": "^2.0.5",
+    "vue-lottie": "^0.2.1"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.1.0",
