@@ -15,7 +15,7 @@
         </div>
         <full-page ref="fullpage" :options="options" id="fullpage">
           <div class="section">
-            <Intro> </Intro>
+           <Intro> </Intro>
           </div>
           <div class="section">
             <IntroPageTwo> </IntroPageTwo>
