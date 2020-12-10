@@ -144,11 +144,10 @@
     },
     data() {
       return {
-        licenseKey: '2771A04F-45AB4BE7-9E833A0A-2325C142',
         loading: 'loading',
         CreditOpen: 'Credit isNotOpen',
         options: {
-          licenseKey: 'my_key',
+          licenseKey: '2771A04F-45AB4BE7-9E833A0A-2325C142',
           menu: '#menu',
           anchors: ['Intro1', 'Intro2', 'Intro3', '1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu', '2RCTitre', '2RCPage1', '2RCPage2', 'Conclu']
         },
