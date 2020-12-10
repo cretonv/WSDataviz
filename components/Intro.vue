@@ -63,6 +63,7 @@
     computed: {},
     methods: {
       openCard(card) {
+        let i = card
         document.querySelector('.card:nth-of-type(' + i + ')').classList.add('isOpen')
         if (i === 3) {
           document.querySelector('.button:nth-of-type(' + (i - 2) + ')').classList.remove('hidden')
