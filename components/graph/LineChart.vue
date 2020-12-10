@@ -5,7 +5,7 @@
     <div class="text">
       <span class="explication">Entre les années 1962 et 2000 nous observons une tendance à la  hausse du nombre de sécheresse, feux de fôret ainsi que température extrêmes.</span>
       <div v-if="addDataCounter < 2" class="buttonChangeDatas" @click="displayOtherDatas">
-        Voir les stats suivantes
+        SUIVANT
       </div>
     </div>
   </div>
