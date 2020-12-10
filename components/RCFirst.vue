@@ -116,12 +116,13 @@
     }
 
     .paragraph {
+      padding: 18px;
       grid-column: 3 / 4;
       grid-row: 4;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 16px;
       color: #9D9D9D;
       height: 100%;

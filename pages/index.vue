@@ -29,7 +29,7 @@
           <div class="section">
             <RCfirst
                title="Catastrophes climatiques"
-               paragraph=" "
+               paragraph="Par catastrophes climatiques nous entendons toutes les catastrophes liées au climat.  Nous excluons ici les catastrophes naturelles à savoir : séismes, éruption volcaniques, ouragans."
                page="01"
                imageSrc="/ressources/img/image1.jpg"
                imageXPosition="1/4"
