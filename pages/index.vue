@@ -77,6 +77,11 @@
               page="02"
             > </GraphDisplayPageSix>
           </div>
+          <div class="section">
+            <Conclusion>
+
+            </Conclusion>
+          </div>
         </full-page>
       </div>
       <Credit
@@ -104,6 +109,7 @@
   import VariousStatsPageFour from "../components/VariousStatsPageFour";
   import GraphDisplayPageFive from "../components/GraphDisplayPageFive";
   import GraphDisplayPageSix from "../components/GraphDisplayPageSix";
+  import Conclusion from "../components/Conclusion";
 
   export default {
     components: {
@@ -115,7 +121,8 @@
       GraphDisplayPageThree,
       VariousStatsPageFour,
       GraphDisplayPageFive,
-      GraphDisplayPageSix
+      GraphDisplayPageSix,
+      Conclusion
     },
     component() {
       GridBackground,
@@ -221,6 +228,28 @@
           width: 50px;
           height: 50px;
           cursor: pointer;
+          //animation-name: anim_round;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+
+          @keyframes anim_round {
+            0% {
+              transform: skew(5deg, -5deg);
+            }
+            25% {
+              transform: skew(5deg, 5deg);
+            }
+            50% {
+              transform: skew(5deg, -5deg);
+            }
+            75% {
+              transform: skew(5deg, -15deg);
+            }
+            100% {
+              transform: skew(5deg, -5deg);
+            }
+          }
         }
       }
 
