@@ -2,8 +2,17 @@
   <div class="content">
     <div class="map">
     </div>
-    <div class="paragraph">
-      Les catastrophes climatiques n’épargnent pas la france.
+    <div class="paragraph first">
+      Ce n’est pas « juste » une vague de chaleur.
+    </div>
+    <div class="paragraph second">
+      Ce n’est pas « juste » une inondation.
+    </div>
+    <div class="paragraph third">
+      En réalité...
+    </div>
+    <div class="paragraph four">
+      Les catastrophes climatiques n’épargnent pas la France.
     </div>
   </div>
 </template>
@@ -36,24 +45,77 @@
     }
 
     .paragraph {
-      width: fit-content;
+      position: absolute;
+      width: 50vw;
       text-align: center;
-      margin: 48vh auto;
+      margin: 48vh 25vw;
       font-family: Montserrat;
       font-style: normal;
       font-weight: 600;
       font-size: 24px;
       line-height: 29px;
       opacity: 0;
-      transition-delay: 1s;
-      transition: 1s all;
     }
     .active {
       .fp-tableCell {
         .paragraph {
-          opacity: 1;
-          transition: 2s all;
-          transition-delay: 0.5s;
+          &.first {
+            animation-name: anim_one;
+            animation-duration: 3s;
+            animation-play-state: running;
+          }
+          &.second {
+            animation-name: anim_one;
+            animation-duration: 3s;
+            animation-delay: 4s;
+            animation-play-state: running;
+          }
+          &.third {
+            animation-name: anim_one;
+            animation-duration: 2s;
+            animation-delay: 8s;
+            animation-play-state: running;
+          }
+          &.four {
+            animation-name: anim_one;
+            animation-duration: 13s;
+            animation-delay: 11s;
+            animation-play-state: running;
+          }
+          @keyframes anim_one {
+            0% {
+              opacity: 0;
+            }
+            30% {
+              opacity: 1;
+            }
+            70% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+          @keyframes anim_last {
+            0% {
+              opacity: 0;
+            }
+            10% {
+              opacity: 0.1;
+            }
+            20% {
+              opacity: 0.2;
+            }
+            30% {
+              opacity: 0.25;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
         }
       }
     }
