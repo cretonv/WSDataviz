@@ -144,7 +144,7 @@
     },
     data() {
       return {
-        licenseKey: 'zefmze943DZI',
+        licenseKey: '2771A04F-45AB4BE7-9E833A0A-2325C142',
         loading: 'loading',
         CreditOpen: 'Credit isNotOpen',
         options: {
