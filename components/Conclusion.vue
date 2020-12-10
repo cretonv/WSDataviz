@@ -90,7 +90,7 @@
       grid-column: 4/8;
       transform-origin: top right;
       transform: translateX(1vw) scale(0.90);
-      background-image: url("/ressources/img/image11.jpg");
+      background-image: url("/ressources/img/image13.jpg");
       filter: grayscale(1);
       transition: all 0.5s;
 
