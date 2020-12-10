@@ -170,6 +170,7 @@
         font-weight: 800;
         font-size: 8vw;
         color: #FF3633;
+        transition-delay: 1s;
       }
     }
     .third-part-title-container {
@@ -188,6 +189,7 @@
         transform: rotate(0.75turn) translateX(300%);
         font-size: 5vw;
         color: #293241;
+        transition-delay: 1s;
       }
     }
     .site-name {
