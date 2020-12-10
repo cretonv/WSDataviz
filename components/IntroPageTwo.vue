@@ -61,25 +61,25 @@
         .paragraph {
           &.first {
             animation-name: anim_one;
-            animation-duration: 3s;
+            animation-duration: 2s;
             animation-play-state: running;
           }
           &.second {
             animation-name: anim_one;
-            animation-duration: 3s;
-            animation-delay: 4s;
+            animation-duration: 2s;
+            animation-delay: 3s;
             animation-play-state: running;
           }
           &.third {
             animation-name: anim_one;
-            animation-duration: 2s;
-            animation-delay: 8s;
+            animation-duration: 1s;
+            animation-delay: 6s;
             animation-play-state: running;
           }
           &.four {
             animation-name: anim_one;
             animation-duration: 13s;
-            animation-delay: 11s;
+            animation-delay: 7.5s;
             animation-play-state: running;
           }
           @keyframes anim_one {
