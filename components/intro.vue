@@ -67,7 +67,6 @@
           console.log('PTUAIN', document.querySelector('.card:nth-of-type(' + i + ')'))
           document.querySelector('.card:nth-of-type(' + i + ')').classList.add('isOpen')
         },
-      }
     }
 </script>
 
@@ -77,6 +76,7 @@
     height: 100vh;
 
       .map {
+<<<<<<< HEAD
         position: relative;
         top: 5%;
         left: 10%;
@@ -172,6 +172,5 @@
             left: 86%;
           }
         }
-      }
   }
 </style>
