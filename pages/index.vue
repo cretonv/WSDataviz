@@ -1,6 +1,9 @@
 <template>
   <div class="body">
-      <div :class="loading"></div>
+      <div :class="loading">
+        <div class="bg-pattern first"></div>
+        <div class="intro-sentence"> Celà nous concerne aussi... </div>
+      </div>
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.6fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
         <div class="navleft">
@@ -164,7 +167,7 @@
         setTimeout(() => {
           this.loading = 'loading stop'
           console.log('testloading')
-        }, 3000)
+        }, 2000)
       },
       openCredit() {
         if (this.CreditOpen == 'Credit isNotOpen') {
@@ -212,6 +215,29 @@
       top:0;
       left:0;
       background-color: white;
+      display: grid;
+      grid-template-columns: 0.4fr repeat(6, 1fr) 0.6fr;
+      grid-template-rows: repeat(4, 1fr);
+      overflow: hidden;
+
+      .bg-pattern {
+        background-image: url("/ressources/img/svg/motif.svg");
+        background-size: cover;
+        opacity: 0.07;
+
+        &.first {
+          grid-row: 1 / 5;
+          grid-column: 1 / 9;
+        }
+      }
+      .intro-sentence {
+        font-size: 10vh;
+        max-width: 80vw;
+        margin: 40vh 10vw;
+        font-family: Montserrat;
+        text-align: center;
+        position: absolute;
+      }
     }
 
     .stop {
