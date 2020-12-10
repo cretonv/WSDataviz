@@ -79,7 +79,11 @@
           </div>
         </full-page>
       </div>
-      <Credit @close="openCredit()" :class="CreditOpen"></Credit>
+      <Credit
+        @close="openCredit()"
+        :class="CreditOpen"
+      >
+      </Credit>
   </div>
 </template>
 
@@ -129,7 +133,8 @@
           menu: '#menu',
           anchors: ['Intro', '1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu']
         },
-        page: "01"
+        page: "01",
+        animateCredit: false,
       }
     },
     async mounted() {
