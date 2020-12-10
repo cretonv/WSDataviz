@@ -5,7 +5,9 @@
     <div class="first-part-title-container">
       <h2 class="first-part-title"> réchauf</h2>
     </div>
-    <h2 class="second-part-title"> fement </h2>
+    <div class="second-part-title-container">
+      <h2 class="second-part-title"> fement </h2>
+    </div>
     <div class="third-part-title-container">
       <h2 class="third-part-title"> climatique </h2>
     </div>
@@ -139,25 +141,36 @@
         right: -34.9vw;
         bottom: 0;
         transform-origin: bottom left;
-        transform: rotate(0.75turn) translateX(-0.8vw);
+        transform: rotate(0.75turn) translateX(-300%);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 8vw;
+        color: #FF3633;
+        transition: all 0.5s;
+        transition-delay: 1s;
+      }
+    }
+    .second-part-title-container {
+      position: relative;
+      grid-row: 1/4;
+      grid-column: 6;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      .second-part-title {
+        position: absolute;
+        right: 15vw;
+        top: 0;
+        transform-origin: top right;
+        transform: rotate(0.75turn) translateX(-300%);
         font-family: Montserrat;
         font-style: normal;
         font-weight: 800;
         font-size: 8vw;
         color: #FF3633;
       }
-    }
-    .second-part-title {
-      position: absolute;
-      right: 38vw;
-      top: 0;
-      transform-origin: top right;
-      transform: rotate(0.75turn) translateX(1.5vw);
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 8vw;
-      color: #FF3633;
     }
     .third-part-title-container {
       position: relative;
@@ -172,7 +185,7 @@
         left: 90%;
         font-weight: 300;
         transform-origin: bottom left;
-        transform: rotate(0.75turn);
+        transform: rotate(0.75turn) translateX(300%);
         font-size: 5vw;
         color: #293241;
       }
@@ -218,6 +231,25 @@
       &.second {
         grid-row: 4;
         grid-column: 7/9;
+      }
+    }
+    .active {
+      .fp-tableCell {
+        .first-part-title {
+          transform: rotate(0.75turn) translateX(-0.8vw);
+          transition-delay: 1s;
+          transition: all 2s;
+        }
+        .second-part-title {
+          transform: rotate(0.75turn) translateX(1vw);
+          transition-delay: 1.2s;
+          transition: all 2s;
+        }
+        .third-part-title {
+          transform: rotate(0.75turn) translateX(0);
+          transition-delay: 1.2s;
+          transition: all 2s;
+        }
       }
     }
 
