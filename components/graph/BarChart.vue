@@ -61,8 +61,8 @@ export default {
         async change(type){
             let data
             if (type == 'event') {
-                //document.querySelector('.event').classList.add('active')
-                //document.querySelector('.victims').classList.remove('active')
+                document.querySelector('.event').classList.add('active')
+                document.querySelector('.victims').classList.remove('active')
 
                 data = await d3.csv(this.dataEventLocation);
                 this.makeData(data, type)
