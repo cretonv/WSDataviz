@@ -65,7 +65,7 @@
           <div class="section">
             <SecondTitle
               title="Catastrophes climatiques"
-              paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
+              paragraph="Depuis le début du XXème siècle on observe une hausse des températures moyennes atmosphériques et océaniques du fait d’émissions de gaz à effet de serre excessives."
               page="02"
               imageSrc="/ressources/img/image11.jpg"
               imageXPosition="1/5"
