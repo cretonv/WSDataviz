@@ -5,7 +5,9 @@
     <div class="first-part-title-container">
       <h2 class="first-part-title"> catas</h2>
     </div>
-    <h2 class="second-part-title"> trophes </h2>
+    <div class="second-part-title-container">
+      <h2 class="second-part-title"> trophes </h2>
+    </div>
     <div class="third-part-title-container">
       <h2 class="third-part-title"> climatiques </h2>
     </div>
@@ -139,7 +141,30 @@
         left: 95%;
         bottom: 0;
         transform-origin: bottom left;
-        transform: rotate(0.75turn) translateX(-0.8vw);
+        transform: rotate(0.75turn) translateX(-300%);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 8vw;
+        color: #FF3633;
+        transition: all 0.5s;
+        transition-delay: 1s;
+      }
+    }
+    .second-part-title-container {
+      position: relative;
+      grid-row: 1/4;
+      grid-column: 2/4;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      .second-part-title {
+        position: absolute;
+        right: 18.7vw;
+        top: 0;
+        transform-origin: top right;
+        transform: rotate(0.75turn) translateX(-300%);
         font-family: Montserrat;
         font-style: normal;
         font-weight: 800;
@@ -147,32 +172,20 @@
         color: #FF3633;
       }
     }
-    .second-part-title {
-      position: absolute;
-      right: 83.5vw;
-      top: 0;
-      transform-origin: top right;
-      transform: rotate(0.75turn) translateX(1.5vw);
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 8vw;
-      color: #FF3633;
-    }
     .third-part-title-container {
       position: relative;
-      grid-row: 1/3;
+      grid-row: 1/4;
       grid-column: 3;
       height: 100%;
       width: 100%;
 
       .third-part-title {
         position: absolute;
-        bottom: 0;
+        bottom: 33%;
         left: 77%;
         font-weight: 300;
         transform-origin: bottom left;
-        transform: rotate(0.75turn);
+        transform: rotate(0.75turn) translateX(300%);
         font-size: 5vw;
         color: #293241;
       }
@@ -189,35 +202,55 @@
     }
 
     .bg-pattern {
-      background-image: url("/ressources/img/svg/motif.svg");
-      background-size: cover;
-      opacity: 0.07;
-      animation-name: anim_motif;
-      animation-iteration-count: infinite;
-      animation-duration: 10s;
-      z-index: -1;
+       background-image: url("/ressources/img/svg/motif.svg");
+       background-size: cover;
+       opacity: 0.07;
+       animation-name: anim_motif;
+       animation-iteration-count: infinite;
+       animation-duration: 10s;
+       z-index: -1;
 
-      @keyframes anim_motif {
-        0% {
-          transform: scale(1);
+       @keyframes anim_motif {
+         0% {
+           transform: scale(1);
+         }
+
+         50% {
+           transform: scale(1.2);
+         }
+
+         100% {
+           transform: scale(1);
+         }
+       }
+
+       &.first {
+         grid-row: 1/4;
+         grid-column: 2/4;
+       }
+       &.second {
+         grid-row: 4;
+         grid-column: 7/9;
+       }
+     }
+
+    .active {
+      .fp-tableCell {
+        .first-part-title {
+          transform: rotate(0.75turn) translateX(-0.8vw);
+          transition-delay: 1s;
+          transition: all 2s;
         }
-
-        50% {
-          transform: scale(1.2);
+        .second-part-title {
+          transform: rotate(0.75turn) translateX(1.5vw);
+          transition-delay: 1.5s;
+          transition: all 2s;
         }
-
-        100% {
-          transform: scale(1);
+        .third-part-title {
+          transform: rotate(0.75turn) translateX(0);
+          transition-delay: 1.5s;
+          transition: all 2s;
         }
-      }
-
-      &.first {
-        grid-row: 1/4;
-        grid-column: 2/4;
-      }
-      &.second {
-        grid-row: 4;
-        grid-column: 7/9;
       }
     }
 
