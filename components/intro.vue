@@ -5,9 +5,8 @@
         <div class="button" @click="openCard(1)"></div>
         <div class="button" @click="openCard(2)"></div>
         <div class="button" @click="openCard(3)"></div>
-        {{cardOpen}}
         <div class="cards">
-          <IntroCard 
+          <IntroCard
             :class="{card: true, isOpen: cardOpen[0]}"
             :title="'Californie'"
             :styleImg="'width: 300px;'"
@@ -15,8 +14,8 @@
             :img="'/ressources/img/californie.jpg'"
             :type="'Feu de fôret'"
             :date="'09/19'"
-            :datas="[ {data: '22,5', type: 'million €'}, {data: '485 600', type: 'hectares brûlés'}]"></IntroCard>
-          <IntroCard 
+            :datas="[ {data: '22,5', type: 'million €'}, {data: '485 600', type: 'hectares brûlés'}]"> </IntroCard>
+          <IntroCard
             :class="'card ' + cardOpen[1]"
             :styleImg="'width: 200px;'"
             :title="'France'"
@@ -24,8 +23,8 @@
             :img="'/ressources/img/france.jpg'"
             :type="'Canicule'"
             :date="'07/19'"
-            :datas="[ {data: '1442', type: 'morts'} ]"></IntroCard>
-          <IntroCard 
+            :datas="[ {data: '1442', type: 'morts'} ]"> </IntroCard>
+          <IntroCard
             :class="'card ' + cardOpen[2]"
             :title="'Inde'"
             :styleImg="'width: 300px;'"
@@ -33,8 +32,8 @@
             :img="'/ressources/img/inde.jpg'"
             :type="'Inondation'"
             :date="'08/19'"
-            :datas="[ {data: '1900', type: 'morts'} ]"></IntroCard>
-          <IntroCard 
+            :datas="[ {data: '1900', type: 'morts'} ]"> </IntroCard>
+          <IntroCard
             :class="'card ' + cardOpen[3]"
             :title="'Japon'"
             :styleImg="'width: 300px;'"
@@ -42,7 +41,7 @@
             :img="'/ressources/img/japon.jpg'"
             :type="'Typhon'"
             :date="'10/19'"
-            :datas="[ {data: '20,7', type: 'milliards €'} ]"></IntroCard>
+            :datas="[ {data: '20,7', type: 'milliards €'} ]"> </IntroCard>
         </div>
       </div>
   </div>
@@ -54,6 +53,9 @@
       name: "Intro",
       computed: {
       },
+      components: {
+        IntroCard
+      },
       data() {
         return {
           cardOpen: [false, false, false, false],
@@ -61,16 +63,10 @@
       },
       methods: {
         openCard(card) {
-          console.log(card)
-          if (this.cardOpen[card] == false ) {
-            console.log('change to true')
-            this.cardOpen[card] = true
-          } else if (this.cardOpen[card] == true ) {
-            console.log('change to false')
-            this.cardOpen[card] = false
-          }
-          console.log(this.cardOpen)
-        }
+          let i = card + 1
+          console.log('PTUAIN', document.querySelector('.card:nth-of-type(' + i + ')'))
+          document.querySelector('.card:nth-of-type(' + i + ')').classList.add('isOpen')
+        },
       }
     }
 </script>
@@ -95,7 +91,7 @@
           position: absolute;
           width: 80%;
           height: 65vw;
-          
+
           .card {
             position: absolute;
             transition-duration: 0.5s;
@@ -109,17 +105,17 @@
               top: 6%;
               left: 4%;
             }
-            
+
             &:nth-of-type(2) {
               top: 25%;
               left: 48%;
             }
-            
+
             &:nth-of-type(3) {
               top: 33%;
               left: 78%;
             }
-            
+
             &:nth-of-type(4) {
               top: 7%;
               left: 97%;
@@ -137,7 +133,7 @@
           height: 10px;
           transform: translateX(-50%) translateY(-50%);
           border: none;
-          position: absolute;    
+          position: absolute;
           animation-name: anim_button;
           animation-iteration-count: infinite;
           animation-duration: 5s;
@@ -155,22 +151,22 @@
               box-shadow: 0px 0px 0px 0px rgba(255,0,0,0.3);
             }
           }
-          
+
           &:nth-of-type(1) {
             top: 30%;
             left: 17%;
           }
-          
+
           &:nth-of-type(2) {
             top: 29%;
             left: 49%;
           }
-          
+
           &:nth-of-type(3) {
             top: 39%;
             left: 71%;
           }
-          
+
           &:nth-of-type(4) {
             top: 31%;
             left: 86%;
