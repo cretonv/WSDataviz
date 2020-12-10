@@ -1,16 +1,28 @@
 <template>
   <div class="body">
+      <div :class="loading"></div>
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.6fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
-        <div class="nav">
+        <div class="navleft">
+          <button class="points" href="#map"> </button>
+          <button class="points" href="#1CCTitre"> </button>
+          <button class="points" href="#2RCTitre"> </button>
+        </div>
+        <div class="navright">
           <div class="logo">
-            <img class="earth" src="ressources/icon/red_round.svg">
+            <img class="earth" @click="openCredit()" src="ressources/icon/red_round.svg">
           </div>
-          <button class="points" @click="test('first')"> </button>
-          <button class="points" @click="test('second')"> </button>
-          <button class="points" @click="test('third')"> </button>
         </div>
         <full-page ref="fullpage" :options="options" id="fullpage">
+          <div class="section">
+            <Intro> </Intro>
+          </div>
+          <div class="section">
+            <IntroPageTwo> </IntroPageTwo>
+          </div>
+          <div class="section">
+            <IntroPageThree> </IntroPageThree>
+          </div>
           <div class="section">
             <RCfirst
                title="Catastrophes climatiques"
@@ -47,8 +59,42 @@
 
             </VariousStatsPageFour>
           </div>
+          <div class="section">
+            <SecondTitle
+              title="Catastrophes climatiques"
+              paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
+              page="02"
+              imageSrc="/ressources/img/image11.jpg"
+              imageXPosition="1/5"
+              imageYPosition="2/5"
+            > </SecondTitle>
+          </div>
+          <div class="section">
+            <GraphDisplayPageFive
+              title="Monde 1950 - 2020"
+              subTitle='Écarts des températures en C° sur la période 1950 - 20...'
+              page="02"
+              > </GraphDisplayPageFive>
+          </div>
+          <div class="section">
+            <GraphDisplayPageSix
+              title="L’être humain dans tout ça ?"
+              subTitle='Répartition des émissions de CO2 par secteurs en France en 2017'
+              page="02"
+            > </GraphDisplayPageSix>
+          </div>
+          <div class="section">
+            <Conclusion>
+
+            </Conclusion>
+          </div>
         </full-page>
       </div>
+      <Credit
+        @close="openCredit()"
+        :class="CreditOpen"
+      >
+      </Credit>
   </div>
 </template>
 
@@ -61,41 +107,73 @@
   import GridBackground from "../components/GridBackground.vue";
   import GraphDisplay from "../components/GraphDisplayPageOne.vue";
   import RCfirst from "../components/RCFirst.vue";
+  import Credit from "../components/Credit.vue";
+  import Intro from "../components/Intro.vue";
   import GraphDisplayPageOne from "../components/GraphDisplayPageOne";
   import GraphDisplayPageTwo from "../components/GraphDisplayPageTwo";
   import GraphDisplayPageThree from "../components/GraphDisplayPageThree";
   import VariousStatsPageFour from "../components/VariousStatsPageFour";
+  import GraphDisplayPageFive from "../components/GraphDisplayPageFive";
+  import GraphDisplayPageSix from "../components/GraphDisplayPageSix";
+  import Conclusion from "../components/Conclusion";
+  import IntroPageTwo from "../components/IntroPageTwo";
+  import IntroPageThree from "../components/IntroPageThree";
 
   export default {
     components: {
       GraphDisplay,
       RCfirst,
+      Intro,
       GraphDisplayPageOne,
       GraphDisplayPageTwo,
       GraphDisplayPageThree,
-      VariousStatsPageFour
-    },
-    component() {
+      VariousStatsPageFour,
+      GraphDisplayPageFive,
+      GraphDisplayPageSix,
+      Conclusion,
+      IntroPageTwo,
+      IntroPageThree,
+      Credit,
       GridBackground,
-      RCfirst,
-      GraphDisplayPageOne,
-      GraphDisplayPageTwo,
-      GraphDisplayPageThree
+      VueFullPage
     },
     data() {
       return {
+        loading: 'loading',
+        CreditOpen: 'Credit isNotOpen',
         options: {
           licenseKey: 'my_key',
           menu: '#menu',
-          anchors: ['page1', 'page2', 'page3']
+          anchors: ['Intro1', 'Intro2', 'Intro3', '1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu', '2RCTitre', '2RCPage1', '2RCPage2', 'Conclu']
         },
-        page: "01"
+        page: "01",
+        animateCredit: false,
       }
     },
-    mounted() {},
+    async mounted() {
+      await this.waitforloading();
+      document.addEventListener('DOMContentLoaded',() => {
+          this.test('test the loading')
+      });
+    },
     methods: {
       test(test){
         console.log('test', test)
+      },
+      waitforloading() {
+        setTimeout(() => {
+          this.loading = 'loading stop'
+          console.log('testloading')
+        }, 3000)
+      },
+      openCredit() {
+        if (this.CreditOpen == 'Credit isNotOpen') {
+          console.log('open credit')
+          this.CreditOpen = 'Credit isOpen'
+        } else if (this.CreditOpen = 'Credit isOpen') {
+          console.log('close credit')
+          this.CreditOpen = 'Credit isNotOpen'
+        }
       }
     },
   }
@@ -109,18 +187,113 @@
     width: 100%;
     height: 100vh;
 
+    .Credit {
+      position: absolute;
+      z-index: 7;
+      width: 100%;
+      height: 100vh;
+      left:0;
+      transition-duration: 0.7s;
+
+      &.isOpen {
+        top: 0;
+      }
+
+      &.isNotOpen {
+        top: -100vh;
+      }
+    }
+
+    .loading {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      height:100vh;
+      top:0;
+      left:0;
+      background-color: white;
+    }
+
+    .stop {
+      transition-duration: 0.7s;
+      top: -100vh;
+    }
+
     .content {
 
-      .nav{
+      .logo {
+        width: calc(100% / 7 * 0.6);
         position: absolute;
-        z-index: 1;
-        width: 100%;
+        right: 0;
+        top: 0;
+        z-index: 6;
+        text-align: center;
+
+        .earth {
+          margin-top: 30px;
+          width: 50px;
+          height: 50px;
+          cursor: pointer;
+          //animation-name: anim_round;
+          animation-duration: 5s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+
+          @keyframes anim_round {
+            0% {
+              transform: skew(5deg, -5deg);
+            }
+            25% {
+              transform: skew(5deg, 5deg);
+            }
+            50% {
+              transform: skew(5deg, -5deg);
+            }
+            75% {
+              transform: skew(5deg, -15deg);
+            }
+            100% {
+              transform: skew(5deg, -5deg);
+            }
+          }
+        }
+      }
+
+      .navleft{
+        position: absolute;
+        z-index: 6;
+        width: calc(100% / 7 * 0.4);
         height: 100vh;
         display: grid;
-        grid-template-columns: 0.4fr repeat(6, 1fr) 0.6fr;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 1fr);
-        grid-column-gap: 1px;
-        grid-row-gap: 1px;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        .points {
+          position: absolute;
+          transform: translateY(-50%) translateX(+50%);
+          width: 13px;
+          height: 13px;
+          font-size: 0;
+          border-radius: 100%;
+          background-color: #D3D3D3;
+          border: 0;
+          cursor: pointer;
+          right: 0;
+
+          &:nth-of-type(1) {
+            grid-row: 2;
+          }
+
+          &:nth-of-type(2) {
+            grid-row: 3;
+          }
+
+          &:nth-of-type(3) {
+            grid-row: 4;
+          }
+        }
       }
 
       #fullpage{
@@ -131,45 +304,10 @@
         }
       }
 
-      .logo {
-        grid-column: 8 / 9;
-        grid-row: 1 / 2;
-        text-align: center;
-
-        .earth {
-          margin-top: 30px;
-          width: 50px;
-          height: 50px;
-        }
-      }
-
-      .points {
-        cursor: pointer;
-        transform: translateY(-50%) translateX(-50%);
-        width: 13px;
-        height: 13px;
-        font-size: 0;
-        border-radius: 100%;
-        background-color: #D3D3D3;
-        border: 0;
-        grid-column: 2;
-
-        &:nth-of-type(1) {
-          grid-row: 3;
-        }
-
-        &:nth-of-type(2) {
-          grid-row: 4;
-        }
-
-        &:nth-of-type(3) {
-          grid-row: 2;
-        }
-      }
     }
 
     #fullpage {
-      z-index: 10;
+      z-index: 5;
     }
 
     .background {
