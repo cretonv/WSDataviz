@@ -132,14 +132,10 @@
       GraphDisplayPageSix,
       Conclusion,
       IntroPageTwo,
-      IntroPageThree
-    },
-    component() {
+      IntroPageThree,
+      Credit,
       GridBackground,
-      RCfirst,
-      GraphDisplayPageOne,
-      GraphDisplayPageTwo,
-      GraphDisplayPageThree
+      VueFullPage
     },
     data() {
       return {
