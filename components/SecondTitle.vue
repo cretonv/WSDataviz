@@ -1,15 +1,15 @@
 <template>
   <div class="content">
-    <audio id='glacierSound' src='/ressources/sound/glacier.mp3'/>
+    <audio id='mineSound' src='/ressources/sound/mine.mp3'/>
     <div class="hide-icon"> </div>
     <div class="first-part-title-container">
-      <h2 class="first-part-title"> catas</h2>
+      <h2 class="first-part-title"> réchauf</h2>
     </div>
     <div class="second-part-title-container">
-      <h2 class="second-part-title"> trophes </h2>
+      <h2 class="second-part-title"> fement </h2>
     </div>
     <div class="third-part-title-container">
-      <h2 class="third-part-title"> climatiques </h2>
+      <h2 class="third-part-title"> climatique </h2>
     </div>
     <div class="paragraph">
       {{ paragraph }}
@@ -23,39 +23,39 @@
 </template>
 
 <script>
-    export default {
-      name: "RCfirst",
-      props: {
-        title: String,
-        paragraph: String,
-        imageSrc: String,
-        imageXPosition: String,
-        imageYPosition: String,
-        page: String
-      },
-      data() {
+  export default {
+    name: "SecondTitle",
+    props: {
+      title: String,
+      paragraph: String,
+      imageSrc: String,
+      imageXPosition: String,
+      imageYPosition: String,
+      page: String
+    },
+    data() {
+      return {
+      }
+    },
+    computed: {
+      getFirstImagePosition() {
         return {
+          'grid-row': this.imageXPosition,
+          'grid-column': this.imageYPosition,
         }
       },
-      computed: {
-        getFirstImagePosition() {
-          return {
-            'grid-row': this.imageXPosition,
-            'grid-column': this.imageYPosition,
-          }
-        },
+    },
+    methods: {
+      getSound: () => {
+        let audio = document.querySelector('#mineSound')
+        audio.play()
       },
-      methods: {
-        getSound: () => {
-            let audio = document.querySelector('#glacierSound')
-            audio.play()
-        },
-        stopSound: () => {
-          let audio = document.querySelector('#glacierSound')
-          audio.pause()
-        }
+      stopSound: () => {
+        let audio = document.querySelector('#mineSound')
+        audio.pause()
       }
     }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -89,12 +89,12 @@
 
     .img {
       img {
-        width: 100%;
-        height: 100%;
+        width: 87%;
+        height: 75%;
         object-fit: cover;
         filter: grayscale(100%);
         transition: all 0.3s;
-        transform: scale(1.16);
+        transform: scale(1.16) translateX(3.3vw);
         transform-origin: top left;
       }
 
@@ -116,8 +116,8 @@
     }
 
     .paragraph {
-      grid-column: 3 / 4;
-      grid-row: 4;
+      grid-column: 7;
+      grid-row: 3;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: normal;
@@ -131,14 +131,14 @@
     .first-part-title-container {
       position: relative;
       grid-row: 1/4;
-      grid-column: 2;
+      grid-column: 5;
       height: 100%;
       width: 100%;
       overflow: hidden;
 
       .first-part-title {
         position: absolute;
-        left: 95%;
+        right: -34.9vw;
         bottom: 0;
         transform-origin: bottom left;
         transform: rotate(0.75turn) translateX(-300%);
@@ -154,14 +154,14 @@
     .second-part-title-container {
       position: relative;
       grid-row: 1/4;
-      grid-column: 2/4;
+      grid-column: 6;
       height: 100%;
       width: 100%;
       overflow: hidden;
 
       .second-part-title {
         position: absolute;
-        right: 18.7vw;
+        right: 15vw;
         top: 0;
         transform-origin: top right;
         transform: rotate(0.75turn) translateX(-300%);
@@ -175,15 +175,15 @@
     }
     .third-part-title-container {
       position: relative;
-      grid-row: 1/4;
-      grid-column: 3;
+      grid-row: 1/3;
+      grid-column: 6;
       height: 100%;
       width: 100%;
 
       .third-part-title {
         position: absolute;
-        bottom: 33%;
-        left: 77%;
+        bottom: 0;
+        left: 90%;
         font-weight: 300;
         transform-origin: bottom left;
         transform: rotate(0.75turn) translateX(300%);
@@ -204,38 +204,37 @@
     }
 
     .bg-pattern {
-       background-image: url("/ressources/img/svg/motif.svg");
-       background-size: cover;
-       opacity: 0.07;
-       animation-name: anim_motif;
-       animation-iteration-count: infinite;
-       animation-duration: 10s;
-       z-index: -1;
+      background-image: url("/ressources/img/svg/motif.svg");
+      background-size: cover;
+      opacity: 0.07;
+      animation-name: anim_motif;
+      animation-iteration-count: infinite;
+      animation-duration: 10s;
+      z-index: -1;
 
-       @keyframes anim_motif {
-         0% {
-           transform: scale(1);
-         }
+      @keyframes anim_motif {
+        0% {
+          transform: scale(1);
+        }
 
-         50% {
-           transform: scale(1.2);
-         }
+        50% {
+          transform: scale(1.2);
+        }
 
-         100% {
-           transform: scale(1);
-         }
-       }
+        100% {
+          transform: scale(1);
+        }
+      }
 
-       &.first {
-         grid-row: 1/4;
-         grid-column: 2/4;
-       }
-       &.second {
-         grid-row: 4;
-         grid-column: 7/9;
-       }
-     }
-
+      &.first {
+        grid-row: 4;
+        grid-column: 1/4;
+      }
+      &.second {
+        grid-row: 4;
+        grid-column: 7/9;
+      }
+    }
     .active {
       .fp-tableCell {
         .first-part-title {
@@ -244,13 +243,13 @@
           transition: all 2s;
         }
         .second-part-title {
-          transform: rotate(0.75turn) translateX(1.5vw);
-          transition-delay: 1.5s;
+          transform: rotate(0.75turn) translateX(1vw);
+          transition-delay: 1.2s;
           transition: all 2s;
         }
         .third-part-title {
           transform: rotate(0.75turn) translateX(0);
-          transition-delay: 1.5s;
+          transition-delay: 1.2s;
           transition: all 2s;
         }
       }

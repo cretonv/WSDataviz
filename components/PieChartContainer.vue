@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="pieChartContainer">
     <PieChart
       :title="'CO2'"
       :label="this.label"
       :data="this.data"
       :detaildata="this.detaildata"
       :detaillabel="this.detaillabel"
-    ></PieChart>
+    > </PieChart>
   </div>
 </template>
 
@@ -15,27 +15,28 @@
   import PieChart from "../components/graph/PieChart";
 
   export default {
+    name: 'PieChartContainer',
     components: {
       PieChart
     },
     data() {
-        return {
-            dataEventLocation: '/data/co2.csv',
-            data: [],
-            label: [],
-            detaildata: [],
-            detaillabel: [],
-            myChart: null
-        }
+      return {
+        dataEventLocation: '/data/co2.csv',
+        data: [],
+        label: [],
+        detaildata: [],
+        detaillabel: [],
+        myChart: null
+      }
     },
     computed: {
-        ctx() {
-            return document.getElementById('tab').getContext('2d')
-        }
+      ctx() {
+        return document.getElementById('tab').getContext('2d')
+      }
     },
     async mounted() {
-        let data = await d3.csv(this.dataEventLocation);
-        this.makeData(data)
+      let data = await d3.csv(this.dataEventLocation);
+      this.makeData(data)
     },
     methods: {
       makeData(datas) {
@@ -60,9 +61,13 @@
         console.log(this.detaildata, this.detaillabel)
       }
     }
-}
+  }
 
 </script>
 
 <style lang="scss">
+  .pieChartContainer {
+    display: flex;
+    align-items: center;
+  }
 </style>

@@ -5,7 +5,7 @@
     <div class="text">
       Entre les années 1960 et 2000 nous observons une tendance à la hausse du nombre de sécheresse, feux de fôret ainsi que température extrêmes.
       <div v-if="addDataCounter < 2" class="buttonChangeDatas" @click="displayOtherDatas">
-        Click on me
+        Voir les stats suivantes
       </div>
     </div>
   </div>
@@ -196,7 +196,14 @@
       margin-top: 25px;
       text-transform: capitalize;
       cursor: pointer;
-     float: right;
+      float: right;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: rgb(226, 3, 0);
+        transition: all 0.5s;
+      }
+
     }
   }
 </style>

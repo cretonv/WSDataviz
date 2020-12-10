@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="chart-container">
-            <canvas id="tab">
+            <canvas id="tab-bis">
             </canvas>
         </div>
     </div>
@@ -16,7 +16,7 @@
     data() {
         return {
             dataTempLocation: '/data/temp_over_year.csv',
-            dataEventLocation: '/data/number-of-natural-disaster-events.csv',
+            dataEventLocation: '/data/comboChartData.csv',
             title: 'CO2',
             typefirst: 'bar',
             datasfirst: [],
@@ -27,7 +27,7 @@
     },
     computed: {
         ctx() {
-            return document.getElementById('tab').getContext('2d')
+            return document.getElementById('tab-bis').getContext('2d')
         }
     },
     async mounted() {
@@ -47,6 +47,19 @@
                 label: 'Écart de température',
                 data: this.datasfirst,
                 backgroundColor: [
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(196,196,196,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(255,54,51,0.5)',
+                  'rgba(196,196,196,0.5)',
                   'rgba(196,196,196,0.5)',
                   'rgba(196,196,196,0.5)',
                   'rgba(196,196,196,0.5)',
@@ -82,15 +95,48 @@
             ]
           },
           options: {
+            aspectRatio: 2.5,
+            legend: {
+              display: false
+            },
             scales: {
               yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Écart de température',
+                  fontFamily: 'Montserrat'
+                },
+                ticks: {
+                  beginAtZero: true,
+                  fontFamily: 'Montserrat',
+                  fontSize: 13
+                },
                 id: 'left-y-axis',
                 type: 'linear',
                 position: 'left'
               }, {
+                gridLines : {
+                  display : false
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'Nombre de catastrophes',
+                  fontFamily: 'Montserrat'
+                },
+                ticks: {
+                  beginAtZero: true,
+                  stepSize: 100,
+                  fontFamily: 'Montserrat',
+                  fontSize: 13
+                },
                 id: 'right-y-axis',
                 type: 'linear',
                 position: 'right'
+              }],
+              xAxes: [{
+                gridLines : {
+                  display : false
+                },
               }]
             }
           }
@@ -98,20 +144,27 @@
       },
       makeData(datafirst, datasecond) {
         datafirst.forEach(element => {
-          if(element["Year"] >= 1975 && element["Year"] <= 2018) {
+          if(parseInt(element["Year"]) >= 1962 && parseInt(element["Year"]) <= 2018) {
             this.datasfirst.push(parseFloat(element["Temp"]))
           }
         })
         datasecond.forEach(element => {
-          if(parseInt(element["Year"]) >= 1975 && parseInt(element["Year"]) <= 2018 && element['Entity'] == 'All natural disasters') {
+          if(parseInt(element["Year"]) >= 1962 && parseInt(element["Year"]) <= 2018 && element['Entity'] == 'All natural disasters') {
             this.label.push(element["Year"])
-            this.datassecond.push(parseInt(element["Number_of_disasters"]))
+            this.datassecond.push(parseInt(element["Number of disasters (EMDAT (2020))"]))
           }
         })
+        console.log(datasecond, this.datassecond, this.label)
       },
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .chart-container {
+    canvas {
+      height: 50vh;
+      width: 125vh;
+    }
+  }
 </style>

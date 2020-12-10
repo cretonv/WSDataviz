@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="chart-container">
-            <canvas id="tab">
+            <canvas id="pie-tab">
             </canvas>
         </div>
     </div>
@@ -26,11 +26,11 @@ export default {
     },
     computed: {
         ctx() {
-            return document.getElementById('tab').getContext('2d')
+            return document.getElementById('pie-tab').getContext('2d')
         }
     },
     async mounted() {
-        this.makeTab()
+        await this.makeTab()
     },
     methods: {
         getDetail(event, array){
@@ -41,7 +41,6 @@ export default {
                 this.myChart.data.labels = this.detaillabel[this.label[array[0]._index]]
                 this.myChart.update();
             } else {
-                console.log('return')
                 this.myChart.options.circumference = Math.PI * 2;
                 this.myChart.data.datasets[0].data = this.data
                 this.myChart.data.labels = this.label
@@ -57,28 +56,40 @@ export default {
                         label: this.title,
                         data: this.data,
                         backgroundColor: [
-                            '#CC1E1B',
-                            '#FF3431',
+                            '#FF9796',
                             '#FF7B79',
-                            '#FF9796'
+                            '#FF3431',
+                            '#CC1E1B',
                         ],
                         borderWidth: 0
                     }]
                 },
                 options: {
-                    events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
-                    onClick: (e, a) => this.getDetail(e, a),
-                    circumference: Math.PI * 2,
-                    rotation: 0,
-                    scales: {
+                  events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+                  onClick: (e, a) => this.getDetail(e, a),
+                  circumference: Math.PI * 2,
+                  rotation: 0,
+                  scales: {
                     xAxes: [{
                         gridLines: {
-                        drawOnChartArea: false
-                        }
-                    }]
-                    }
+                        drawOnChartArea: false,
+                          display: false
+                        },
+                      ticks: {
+                          display: false
+                      }
+                    }],
+                  },
+                  legend: {
+                    position: 'bottom',
+                    labels: {
+                      usePointStyle: true,
+                      padding: 10
+                    },
+                  }
                 }
             });
+            this.myChart.update();
         }
     }
 }
@@ -88,8 +99,9 @@ export default {
 
 .chart-container {
 
-    #tab {
-        height: 100%;
+    #pie-tab {
+      height: auto !important;
+      width: 53vw !important;
     }
 }
 
