@@ -1,6 +1,7 @@
 <template>
   <div class="pieChartContainer">
     <PieChart
+      ref="pie"
       :title="'CO2'"
       :label="this.label"
       :data="this.data"
@@ -34,6 +35,10 @@
       this.makeData(data)
     },
     methods: {
+      reloadPie() {
+        console.log('reloadPie')
+        this.$refs.pie.reload()
+      },
       makeData(datas) {
         datas.forEach(element => {
           if (element.Type == 'Global'){

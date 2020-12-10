@@ -33,6 +33,9 @@ export default {
         await this.makeTab()
     },
     methods: {
+        reload() {
+            this.myChart.update();
+        },
         getDetail(event, array){
             if (array[0] && this.myChart.options.circumference == Math.PI * 2 && this.detaildata[this.label[array[0]._index]].length >= 1) {
                 console.log('get', this.detaillabel[this.label[array[0]._index]])

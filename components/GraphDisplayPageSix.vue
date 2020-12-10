@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="content"  @mouseover="reloadChart()">
     <div class="title">
       <h3 v-if="subTitle"> {{subTitle}}</h3>
       <h2> {{title}} </h2>
@@ -13,7 +13,7 @@
     </div>
     <div class="bg-pattern first"></div>
     <div class="bg-pattern second"></div>
-    <PieChartContainer class="graph"> </PieChartContainer>
+    <PieChartContainer ref="pieContainer" class="graph"> </PieChartContainer>
     <h2 class="page">{{page}}</h2>
     <div class="paragraph">
       Le gaz carbonique est l’un des gaz à effet de serre encourageant la hausse des températures. L’utilisation d’énergie est le secteur le plus émetteur de ce dernier.
@@ -33,6 +33,12 @@
       title: String,
       subTitle: String,
       page: String
+    },
+    methods: {
+      reloadChart() {
+        console.log('test')
+        this.$refs.pieContainer.reloadPie()
+      }
     }
   }
 </script>
