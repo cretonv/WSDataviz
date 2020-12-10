@@ -52,7 +52,10 @@
     </div>
     <div class="photos-src">
       <span> Photos : </span> <br>
-      <a href="https://vincent-creton.fr">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a><br>
+      <ul>
+        <li><a href="https://unsplash.com"> Unsplash</a></li>
+        <li><a href="https://www.pexels.com/fr-fr/"> Pexel </a></li>
+      </ul>
 
     </div>
     <div class="nav">
