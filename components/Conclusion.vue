@@ -88,6 +88,7 @@
       font-size: 14px;
       line-height: 16px;
       color: #9D9D9D;
+      padding: 10px;
     }
     .bg-pattern {
       background-image: url("/ressources/img/svg/motif.svg");
