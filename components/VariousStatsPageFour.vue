@@ -130,12 +130,12 @@
         position: relative;
         height: 100%;
         width: 100%;
-        margin-left: 4vw;
+        margin-left: -1vw;
 
         span {
           position: absolute;
-          top: -7px;
-          right: 14px;
+          top: -15px;
+          right: -15px;
         }
       }
     }
