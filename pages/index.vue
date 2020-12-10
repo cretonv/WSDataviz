@@ -121,6 +121,8 @@
   import Conclusion from "../components/Conclusion";
   import IntroPageTwo from "../components/IntroPageTwo";
   import IntroPageThree from "../components/IntroPageThree";
+  import RCFirst from "../components/RCFirst";
+
 
   export default {
     components: {
@@ -142,6 +144,7 @@
     },
     data() {
       return {
+        licenseKey: 'zefmze943DZI',
         loading: 'loading',
         CreditOpen: 'Credit isNotOpen',
         options: {
