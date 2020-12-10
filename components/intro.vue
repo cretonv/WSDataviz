@@ -60,16 +60,15 @@
     components: {
       IntroCard
     },
-    computed: {
-    },
+    computed: {},
     methods: {
       openCard(card) {
         let i = card + 1
         console.log('PTUAIN', document.querySelector('.card:nth-of-type(' + i + ')'))
         document.querySelector('.card:nth-of-type(' + i + ')').classList.add('isOpen')
-        if(i === 3) {
+        if (i === 3) {
           document.querySelector('.button:nth-of-type(' + (i - 2) + ')').classList.remove('hidden')
-        } else if(i === 1) {
+        } else if (i === 1) {
           document.querySelector('.button:nth-of-type(' + (i + 1) + ')').classList.remove('hidden')
         } else {
           document.querySelector('.button:nth-of-type(' + (i - 1) + ')').classList.remove('hidden')
