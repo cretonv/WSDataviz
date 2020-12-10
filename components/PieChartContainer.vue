@@ -29,18 +29,12 @@
         myChart: null
       }
     },
-    computed: {
-      ctx() {
-        return document.getElementById('tab').getContext('2d')
-      }
-    },
     async mounted() {
       let data = await d3.csv(this.dataEventLocation);
       this.makeData(data)
     },
     methods: {
       makeData(datas) {
-        console.log(datas)
         datas.forEach(element => {
           if (element.Type == 'Global'){
             this.data.push(parseInt(element.Data))
@@ -58,7 +52,6 @@
             }
           })
         })
-        console.log(this.detaildata, this.detaillabel)
       }
     }
   }
