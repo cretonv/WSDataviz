@@ -3,7 +3,9 @@
     <div class="first-part-title-container">
       <h2 class="first-part-title"> Conclu </h2>
     </div>
-    <h2 class="second-part-title"> sion </h2>
+    <div class="second-part-title-container">
+      <h2 class="second-part-title"> sion </h2>
+    </div>
     <div class="photo"></div>
     <div class="paragraph">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur corporis cumque, deserunt dolorem doloribus eum excepturi exercitationem expedita illum molestiae nemo non numquam officiis porro quo recusandae sapiente vitae.
@@ -45,25 +47,36 @@
         left: 113.9%;
         bottom: 0;
         transform-origin: bottom left;
-        transform: rotate(0.75turn) translateX(-0.8vw);
+        transform: rotate(0.75turn) translateX(-300%);
         font-family: Montserrat;
         font-style: normal;
         font-weight: 800;
         font-size: 8vw;
         color: #FF3633;
+        transition: all 2s;
       }
     }
-    .second-part-title {
-      position: absolute;
-      right: 82.3vw;
-      top: 0;
-      transform-origin: top right;
-      transform: rotate(0.75turn) translateX(1.5vw);
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: 800;
-      font-size: 8vw;
-      color: #FF3633;
+    .second-part-title-container {
+      position: relative;
+      grid-row: 1/4;
+      grid-column: 2 / 4;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+
+      .second-part-title {
+        position: absolute;
+        right: 16.5vw;
+        top: 0;
+        transform-origin: top right;
+        transform: rotate(0.75turn) translateX(-300%);
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 8vw;
+        color: #FF3633;
+        transition: all 2s;
+      }
     }
     .photo {
       background-position: center;
@@ -116,6 +129,21 @@
       &.first {
         grid-row: 3/5;
         grid-column: 6/9;
+      }
+    }
+
+    .active {
+      .fp-tableCell {
+        .first-part-title {
+          transform: rotate(0.75turn) translateX(-0.8vw);
+          transition-delay: 1s;
+          transition: all 2s;
+        }
+        .second-part-title {
+          transform: rotate(0.75turn) translateX(1.5vw);
+          transition-delay: 1s;
+          transition: all 2s;
+        }
       }
     }
   }
