@@ -16,7 +16,7 @@
     <PieChartContainer class="graph"> </PieChartContainer>
     <h2 class="page">{{page}}</h2>
     <div class="paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
+      Le gaz carbonique est l’un des gaz à effet de serre encourageant la hausse des températures. L’utilisation d’énergie est le secteur le plus émetteur de ce dernier.
     </div>
   </div>
 </template>

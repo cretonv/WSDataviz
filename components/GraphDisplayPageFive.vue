@@ -20,7 +20,7 @@
     <ComboChart class="graph"> </ComboChart>
     <h2 class="page">{{page}}</h2>
     <div class="paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
+      Nous constatons que les températures augmentent au même rythme que le nombre de catastrophes climatiques dans le monde entre 1962 et 2018.
     </div>
   </div>
 </template>

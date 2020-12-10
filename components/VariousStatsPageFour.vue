@@ -1,22 +1,22 @@
 <template>
   <div class="content">
     <div class="paragraph first">
-      Vagues de chaleur ces 30 dernières années que durant les 42 années précédentes  en France
+      C’est la multiplication des vagues de chaleurs ces 30 dernières années comparé aux 42 années précédentes en France.
     </div>
     <div class="stats first">
       <span>x3</span>
     </div>
     <div class="paragraph second">
-      Le nombre d’espèces animales et végétales étant menacées d’extinction au cours des prochaines décennies
+      Représente l'écart des températures durant l'été 2018. Été le plus chaud  après 2003 (+3,2°C) en France métropolitaine.
     </div>
     <div class="stats second">
       <span>1 million</span>
     </div>
     <div class="paragraph third">
-      Le niveau de la mer a augmenté à l'échelle mondiale au cours du XXe siècle
+      Hauteur perdue sur la Mer de glace en l’espace de 30 ans.
     </div>
     <div class="stats third">
-      <span>+15 <br> cm</span>
+      <span>-129<br>m</span>
     </div>
     <div class="comment">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="1000" viewBox="-10 374 2500 1000">

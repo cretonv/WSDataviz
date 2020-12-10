@@ -8,8 +8,13 @@
     </div>
     <div class="photo"></div>
     <div class="paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consequuntur corporis cumque, deserunt dolorem doloribus eum excepturi exercitationem expedita illum molestiae nemo non numquam officiis porro quo recusandae sapiente vitae.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aspernatur consequuntur id iste iure quis voluptatem? Ab, dignissimos ea laboriosam modi, molestias nesciunt obcaecati officiis quibusdam repellendus tempore ullam.
+      Les catastrophes climatiques sont présentes en France malgré leur aspect diffus. Leur nombre s'accélère au même rythme que l’écart des températures.
+      <br> <br>
+      Bien que impuissants face aux cycles du climat, il est de notre ressort de limiter le réchauffement climatique et cela passe par de petites actions quotidiennes.
+      <br>Limitons notre impact.
+
+      Pour en savoir plus sur des actions écoresponsables, on vous invite à consulter ce site : <a href="https://cacommenceparmoi.org/agir/" target="_blank">https://cacommenceparmoi.org/agir/</a>
+
     </div>
     <div class="bg-pattern first"></div>
   </div>
@@ -102,6 +107,15 @@
       line-height: 16px;
       color: #9D9D9D;
       padding: 10px;
+
+      a {
+        color: #ff6869;
+        text-decoration: none;
+
+        &:hover {
+          color: #FF3633;
+        }
+      }
     }
     .bg-pattern {
       background-image: url("/ressources/img/svg/motif.svg");

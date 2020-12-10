@@ -13,7 +13,7 @@
     <BarChart class="graph"> </BarChart>
     <h2 class="page">{{page}}</h2>
     <div class="paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
+      La canicule bien que moins fréquente en comparaison à d’autres évènements, comptabilise à elle seule 1442 morts sur l’été 2019.
     </div>
   </div>
 </template>

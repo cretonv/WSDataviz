@@ -3,7 +3,7 @@
     <canvas ref="myChart">
     </canvas>
     <div class="text">
-      Entre les années 1960 et 2000 nous observons une tendance à la hausse du nombre de sécheresse, feux de fôret ainsi que température extrêmes.
+      <span class="explication">Entre les années 1962 et 2000 nous observons une tendance à la  hausse du nombre de sécheresse, feux de fôret ainsi que température extrêmes.</span>
       <div v-if="addDataCounter < 2" class="buttonChangeDatas" @click="displayOtherDatas">
         Voir les stats suivantes
       </div>
@@ -26,6 +26,7 @@
     methods: {
       displayOtherDatas: function() {
         if(this.addDataCounter === 0) {
+          document.querySelector('.explication').textContent = "Cette hausse est d’autant plus flagrante en ce qui concerne les inondations et la météo extrême."
           this.myChart.data.datasets.push(
             {
               label: 'Innondation',
@@ -59,6 +60,7 @@
           this.myChart.update()
           this.addDataCounter ++;
         } else if(this.addDataCounter === 1) {
+          document.querySelector('.explication').textContent = "Les inondations et les météo extrêmes sont les évènements ayant plus de poids dans l’ensemble des catastrophes climatiques."
           this.myChart.data.datasets.push(
             {
               label: 'Toutes les catastrophes naturels',

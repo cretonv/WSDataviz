@@ -26,7 +26,7 @@
           <div class="section">
             <RCfirst
                title="Catastrophes climatiques"
-               paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
+               paragraph="Éruptions volcaniques, ouragans, séismes sont des évènements météorologiques spontané. Le climat quand à lui varie par cycles. Afin de dégager des tendances il faut donc l’étudier sur de longues périodes."
                page="01"
                imageSrc="/ressources/img/image1.jpg"
                imageXPosition="1/4"
@@ -35,22 +35,22 @@
           </div>
           <div class="section">
             <GraphDisplayPageOne
-              title="Évolution dans le monde entre 1950 et 2000 "
-              subTitle='Nombre d’évènements et de victimes par aléa en France en 2019 '
+              title="Un constat surprenant"
+              subTitle='Évolution dans le temps du nombre de catastrophes climatiques à l’échelle mondiale '
               page="01">
             </GraphDisplayPageOne>
           </div>
           <div class="section">
             <GraphDisplayPageTwo
-              title="France - 2019 "
+              title="Qu’en est-il en France ?"
               subTitle='Nombre d’évènements et de victimes par aléa en France en 2019'
               page="01">
             </GraphDisplayPageTwo>
           </div>
           <div class="section">
             <GraphDisplayPageThree
-              title="France - 1974-2018"
-              subTitle='Population exposée à au moins une canicule dans l’été en France en millions d’habitants '
+              title="Zoom sur la canicule"
+              subTitle='Population exposée à au moins une canicule dans l’été en France en millions d’habitants.'
               page="01">
             </GraphDisplayPageThree>
           </div>
@@ -62,7 +62,7 @@
           <div class="section">
             <SecondTitle
               title="Catastrophes climatiques"
-              paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
+              paragraph="Depuis le début du XXème siècle on observe une hausse des températures moyennes atmosphériques et océaniques du fait d’émissions de gaz à effet de serre excessives."
               page="02"
               imageSrc="/ressources/img/image11.jpg"
               imageXPosition="1/5"
@@ -71,14 +71,14 @@
           </div>
           <div class="section">
             <GraphDisplayPageFive
-              title="Monde 1950 - 2020"
-              subTitle='Écarts des températures en C° sur la période 1950 - 20...'
+              title="Coïncidence ou corrélation ? "
+              subTitle='Ecarts des températures en C°  et évolution du nombre de catastrophes climatique sur la période 1950 et 2018'
               page="02"
               > </GraphDisplayPageFive>
           </div>
           <div class="section">
             <GraphDisplayPageSix
-              title="L’être humain dans tout ça ?"
+              title="L’activité humaine dans tout ça ?"
               subTitle='Répartition des émissions de CO2 par secteurs en France en 2017'
               page="02"
             > </GraphDisplayPageSix>

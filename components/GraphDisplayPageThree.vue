@@ -30,11 +30,8 @@
         </g>
       </svg>
     </div>
-    <div class="paragraph">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
-    </div>
     <div class="paragraph bis">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id porttitor augue. Ut quis semper lacus. Ut accumsan vel arcu sed congue. Duis in lectus sed ipsum porta imperdiet.
+      Entre 2000 et 2017,  le seuil des 20 millions de français soit 1/3 de la population est plus régulièrement dépassé qu’auparavant.
     </div>
   </div>
 </template>
