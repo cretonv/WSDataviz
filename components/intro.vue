@@ -91,8 +91,8 @@
       background-image: url("/ressources/img/svg/map_grise6.svg");
       background-size: contain;
       background-repeat: no-repeat;
-      width: calc(100% * 7 / 8);
-      height: 90vh;
+      width: 80%;
+      height: 65vw;
 
       .cards {
         position: absolute;
