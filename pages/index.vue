@@ -21,6 +21,9 @@
             <IntroPageTwo> </IntroPageTwo>
           </div>
           <div class="section">
+            <IntroPageThree> </IntroPageThree>
+          </div>
+          <div class="section">
             <RCfirst
                title="Catastrophes climatiques"
                paragraph="Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum Lorem Ispum"
@@ -114,6 +117,7 @@
   import GraphDisplayPageSix from "../components/GraphDisplayPageSix";
   import Conclusion from "../components/Conclusion";
   import IntroPageTwo from "../components/IntroPageTwo";
+  import IntroPageThree from "../components/IntroPageThree";
 
   export default {
     components: {
@@ -127,7 +131,8 @@
       GraphDisplayPageFive,
       GraphDisplayPageSix,
       Conclusion,
-      IntroPageTwo
+      IntroPageTwo,
+      IntroPageThree
     },
     component() {
       GridBackground,
