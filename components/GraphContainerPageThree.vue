@@ -20,8 +20,6 @@
             dataToGet = newData;
           })
           this.stats = dataToGet;
-          console.log('STATS', this.stats)
-          //console.log('STAT', this.stats[25].Number_of_disasters)
         },
         async getLabelsAndEntity() {
           let labelsReturnArray = [];
@@ -50,8 +48,6 @@
               entityAndDatas.push(element.Population)
             })
           })
-          //console.log('YEARS', labelsReturnArray)
-          //console.log('ENTITY&DATAS', entityAndDatas)
           this.labels = labelsReturnArray
           this.entityAndDatas = entityAndDatas
         },

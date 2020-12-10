@@ -83,7 +83,6 @@
       },
       watch: {
         animateCredit: () => {
-          console.log('BILLYYYYY')
           document.querySelector('.title-part-1').classList.add('animated')
           document.querySelector('.title-part-2').classList.add('animated')
         }

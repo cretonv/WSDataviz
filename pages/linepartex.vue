@@ -23,14 +23,11 @@
           dataToGet = newData;
         })
         this.stats = dataToGet;
-        console.log('STATS', this.stats)
-        //console.log('STAT', this.stats[25].Number_of_disasters)
       },
       async getLabelsAndEntity() {
         let labelsReturnArray = [];
         let entityAndDatas = {};
         let pushElement = true;
-        console.log(this.stats)
         await d3.csv(
           '/data/number-of-natural-disaster-events.csv'
         ).then(function (data) {

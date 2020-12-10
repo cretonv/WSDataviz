@@ -18,8 +18,6 @@
       },
       mounted() {
         let ctx = this.$refs.myChart.getContext('2d')
-        console.log('LABELS PUTAIN', this.labels)
-        console.log('LABELS PUTAIN', this.entityAndDatas)
         new Chart(ctx, {
           type: 'line',
           option: {

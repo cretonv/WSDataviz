@@ -39,7 +39,6 @@
     },
     methods: {
       makeData(datas) {
-        console.log(datas)
         datas.forEach(element => {
           if (element.Type == 'Global'){
             this.data.push(parseInt(element.Data))
@@ -51,13 +50,11 @@
         this.label.forEach(element => {
           datas.forEach(data => {
             if (data.Type == element && data.Type != 'Global' && data.Data != ''){
-              console.log(parseInt(data.Data))
               this.detaildata[element].push(parseInt(data.Data))
               this.detaillabel[element].push(data.Label)
             }
           })
         })
-        console.log(this.detaildata, this.detaillabel)
       }
     }
 }
