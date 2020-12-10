@@ -30,7 +30,7 @@ export default {
         }
     },
     async mounted() {
-        this.makeTab()
+        await this.makeTab()
     },
     methods: {
         getDetail(event, array){
@@ -56,10 +56,10 @@ export default {
                         label: this.title,
                         data: this.data,
                         backgroundColor: [
-                            '#CC1E1B',
-                            '#FF3431',
+                            '#FF9796',
                             '#FF7B79',
-                            '#FF9796'
+                            '#FF3431',
+                            '#CC1E1B',
                         ],
                         borderWidth: 0
                     }]
@@ -89,6 +89,7 @@ export default {
                   }
                 }
             });
+            this.myChart.update();
         }
     }
 }

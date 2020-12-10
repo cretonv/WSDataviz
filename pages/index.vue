@@ -138,7 +138,7 @@
         options: {
           licenseKey: 'my_key',
           menu: '#menu',
-          anchors: ['Intro', '1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu']
+          anchors: ['Intro', '1CCTitre', '1CCPage1', '1CCPage2', '1CCPage3', '1CCConclu', '2RCTitre', '2RCPage1', '2RCPage2', 'Conclu']
         },
         page: "01",
         animateCredit: false,
