@@ -119,13 +119,13 @@
           }
 
           &:nth-of-type(3) {
-            top: 33%;
-            left: 78%;
+            top: 41%;
+            left: 80%;
           }
 
           &:nth-of-type(4) {
-            top: 7%;
-            left: 97%;
+            top: 10%;
+            left: 110%;
           }
         }
       }
