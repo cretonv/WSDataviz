@@ -17,6 +17,7 @@
 
     </div>
     <div class="bg-pattern first"></div>
+    <img src="/ressources/icon/silence.png" alt="" class="site-name">
   </div>
 </template>
 
@@ -116,6 +117,13 @@
           color: #FF3633;
         }
       }
+    }
+    .site-name {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: auto;
+      height: 75vh;
     }
     .bg-pattern {
       background-image: url("/ressources/img/svg/motif.svg");
