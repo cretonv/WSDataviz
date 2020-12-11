@@ -1,10 +1,10 @@
 <template>
   <div class="content">
     <div class="map">
-      <div class="button hidden" @click="openCard(0)"></div>
       <div class="button hidden" @click="openCard(1)"></div>
       <div class="button hidden" @click="openCard(2)"></div>
-      <div class="button" @click="openCard(3)"></div>
+      <div class="button hidden" @click="openCard(3)"></div>
+      <div class="button" @click="openCard(4)"></div>
       <div class="cards">
         <IntroCard
           :class="{card: true, isOpen: cardOpen[0]}"
