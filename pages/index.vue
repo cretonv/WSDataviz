@@ -2,7 +2,7 @@
   <div class="body">
       <div :class="loading">
         <div class="bg-pattern first"></div>
-        <div class="intro-sentence"> Celà nous concerne aussi... </div>
+        <div class="intro-sentence"> Cela nous concerne aussi... </div>
       </div>
       <GridBackground class="background" :columns="'0.4fr repeat(6, 1fr) 0.6fr'" :rows="'repeat(4, 1fr)'"> </GridBackground>
       <div class="content">
