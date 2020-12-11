@@ -63,7 +63,7 @@
           document.querySelector('.explication').textContent = "Les inondations et les météo extrêmes sont les évènements ayant plus de poids dans l’ensemble des catastrophes climatiques."
           this.myChart.data.datasets.push(
             {
-              label: 'Toutes les catastrophes naturels',
+              label: 'Toutes les catastrophes climatiques',
               data: this.entityAndDatas['All natural disasters'],
               backgroundColor: [
                 'rgba(208,232,242, 0)',

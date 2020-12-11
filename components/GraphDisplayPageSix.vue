@@ -36,7 +36,6 @@
     },
     methods: {
       reloadChart() {
-        console.log('test')
         this.$refs.pieContainer.reloadPie()
       }
     }

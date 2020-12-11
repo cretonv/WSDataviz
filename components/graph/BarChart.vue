@@ -55,7 +55,7 @@ export default {
                 }
                 this.label.push(element.Type)
             })
-            console.log('TEST', this.data, this.label)
+
             this.sorting()
         },
         async change(type){
@@ -104,7 +104,6 @@ export default {
                     idx = temp.indexOf(this.data[i], idx + 1);
                 }
             }
-            console.log('temp', temp, this.data, sortedLabel, this.label)
             this.label = sortedLabel
         },
         makeTab() {

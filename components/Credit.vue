@@ -58,6 +58,10 @@
       </ul>
 
     </div>
+    <div class="authors">
+      Design : Maëlys Tabone - Marie Machado <br>
+      Développement : Anthony Lombard - Vincent Creton
+    </div>
     <div class="nav">
       <img @click="close()" src="/ressources/img/svg/close.svg">
     </div>
@@ -285,6 +289,15 @@
             transition: all 0.4s;
           }
         }
+      }
+      .authors {
+        text-align: right;
+        font-family: Montserrat;
+        font-size: 1vw;
+        color: #FFFFFF;
+        position: absolute;
+        bottom: 19px;
+        right: 31vw;
       }
 
     }

@@ -82,7 +82,7 @@
           <div class="section">
             <GraphDisplayPageSix
               title="L’être humain dans tout ça ?"
-              subTitle='Répartition des émissions de CO2 par secteurs en France en 2017'
+              subTitle='Répartition des émissions de CO2 par secteurs en France en 2017 (en millions de tonnes de CO2)'
               page="02"
             > </GraphDisplayPageSix>
           </div>
@@ -168,15 +168,12 @@
       waitforloading() {
         setTimeout(() => {
           this.loading = 'loading stop'
-          console.log('testloading')
         }, 2000)
       },
       openCredit() {
         if (this.CreditOpen == 'Credit isNotOpen') {
-          console.log('open credit')
           this.CreditOpen = 'Credit isOpen'
         } else if (this.CreditOpen = 'Credit isOpen') {
-          console.log('close credit')
           this.CreditOpen = 'Credit isNotOpen'
         }
       }

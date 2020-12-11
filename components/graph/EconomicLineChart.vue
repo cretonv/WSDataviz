@@ -18,7 +18,6 @@
     },
     watch: {
       labels: function () {
-        console.log('ICIIIII')
       }
     },
     mounted() {

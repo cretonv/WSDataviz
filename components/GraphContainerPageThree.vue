@@ -25,7 +25,6 @@
           let labelsReturnArray = [];
           let entityAndDatas = [];
           let pushElement = true;
-          console.log(this.stats)
           await d3.csv(
             '/data/Population_expose_aux_canicules.csv'
           ).then(function (data) {
@@ -57,7 +56,6 @@
       },
       watch: {
         labels: function () {
-          console.log('CAHNGE')
           this.forceRerender()
         },
         entityAndDatas: function () {

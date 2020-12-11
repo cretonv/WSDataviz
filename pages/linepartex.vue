@@ -32,7 +32,6 @@
           '/data/number-of-natural-disaster-events.csv'
         ).then(function (data) {
           data.forEach((element) => {
-            //console.log('rentre dans le foreach')
             if(labelsReturnArray === []) {
               labelsReturnArray.push(element.Year)
             }
@@ -65,12 +64,8 @@
             }
           })
         })
-        //console.log('YEARS', labelsReturnArray)
-        //console.log('ENTITY&DATAS', entityAndDatas)
         this.labels = labelsReturnArray
         this.entityAndDatas = entityAndDatas
-        //console.log('ARRAY', this.labels)
-        console.log('ARRAY', this.entityAndDatas)
       },
       forceRerender() {
         this.componentKey += 1;
@@ -78,7 +73,6 @@
     },
     watch: {
       labels: function () {
-        console.log('CAHNGE')
         this.forceRerender()
       },
       entityAndDatas: function () {
@@ -108,8 +102,6 @@
       this.getLabelsAndEntity()
       let data = d3.json('data/tweets.json');
       let data2 = d3fetch.csv('/data/number-of-natural-disaster-events.csv');
-      console.log('TRUC', data);
-      console.log('TRUC', data2);
     }
   }
 

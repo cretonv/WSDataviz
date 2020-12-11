@@ -25,12 +25,10 @@
         let labelsReturnArray = [];
         let entityAndDatas = {};
         let pushElement = true;
-        console.log(this.stats)
         await d3.csv(
           '/data/number-of-natural-disaster-events.csv'
         ).then(function (data) {
           data.forEach((element) => {
-            //console.log('rentre dans le foreach')
             if(labelsReturnArray === []) {
               labelsReturnArray.push(element.Year)
             }
@@ -63,12 +61,8 @@
             }
           })
         })
-        //console.log('YEARS', labelsReturnArray)
-        //console.log('ENTITY&DATAS', entityAndDatas)
         this.labels = labelsReturnArray
         this.entityAndDatas = entityAndDatas
-        //console.log('ARRAY', this.labels)
-        console.log('ARRAY', this.entityAndDatas)
       },
       forceRerender() {
         this.componentKey += 1;

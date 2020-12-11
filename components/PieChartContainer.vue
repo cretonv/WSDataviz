@@ -36,7 +36,6 @@
     },
     methods: {
       reloadPie() {
-        console.log('reloadPie')
         this.$refs.pie.reload()
       },
       makeData(datas) {
@@ -51,7 +50,6 @@
         this.label.forEach(element => {
           datas.forEach(data => {
             if (data.Type == element && data.Type != 'Global' && data.Data != ''){
-              console.log(parseInt(data.Data))
               this.detaildata[element].push(parseInt(data.Data))
               this.detaillabel[element].push(data.Label)
             }

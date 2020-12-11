@@ -38,7 +38,6 @@ export default {
         },
         getDetail(event, array){
             if (array[0] && this.myChart.options.circumference == Math.PI * 2 && this.detaildata[this.label[array[0]._index]].length >= 1) {
-                console.log('get', this.detaillabel[this.label[array[0]._index]])
                 this.myChart.options.circumference = Math.PI;
                 this.myChart.data.datasets[0].data = this.detaildata[this.label[array[0]._index]]
                 this.myChart.data.labels = this.detaillabel[this.label[array[0]._index]]
