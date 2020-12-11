@@ -48,10 +48,12 @@
     methods: {
       getSound: () => {
         let audio = document.querySelector('#mineSound')
+        audio.currentTime = 5;
         audio.play()
       },
       stopSound: () => {
         let audio = document.querySelector('#mineSound')
+        audio.currentTime = 0;
         audio.pause()
       }
     }
