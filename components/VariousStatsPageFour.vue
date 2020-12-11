@@ -16,7 +16,7 @@
       Hauteur perdue sur la Mer de glace en l’espace de 30 ans.
     </div>
     <div class="stats third">
-      <span>-129 m</span>
+      <div><span class="value">-129</span> <span class="m">m</span></div>
     </div>
     <div class="comment">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2500" height="1000" viewBox="-10 374 2500 1000">
@@ -132,10 +132,24 @@
         width: 100%;
         margin-left: -1vw;
 
-        span {
+        div {
           position: absolute;
+          width: 100%;
           top: -15px;
-          right: -15px;
+          right: -5%;
+          height: 11.5vh;
+          span.value{
+            position: absolute;
+            right: 0;
+            height: 30%;
+            top: 0;
+          }
+          span.m {
+            position: absolute;
+            right: 0;
+            height: 30%;
+            bottom: 0;
+          }
         }
       }
     }

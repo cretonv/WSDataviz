@@ -38,22 +38,22 @@
           </div>
           <div class="section">
             <GraphDisplayPageOne
-              title="Évolution dans le monde entre 1950 et 2000 "
-              subTitle='Nombre d’évènements et de victimes par aléa en France en 2019 '
+              title="Un constat surprenant"
+              subTitle='Évolution dans le temps du nombre de catastrophes climatiques à l’échelle mondiale '
               page="01">
             </GraphDisplayPageOne>
           </div>
           <div class="section">
             <GraphDisplayPageTwo
-              title="France - 2019 "
+              title="Qu’en est-il en France ?"
               subTitle='Nombre d’évènements et de victimes par aléa en France en 2019'
               page="01">
             </GraphDisplayPageTwo>
           </div>
           <div class="section">
             <GraphDisplayPageThree
-              title="France - 1974-2018"
-              subTitle='Population exposée à au moins une canicule dans l’été en France en millions d’habitants '
+              title="Zoom sur la canicule "
+              subTitle='Population exposée à au moins une canicule dans l’été en France en millions d’habitants.'
               page="01">
             </GraphDisplayPageThree>
           </div>
@@ -74,8 +74,8 @@
           </div>
           <div class="section">
             <GraphDisplayPageFive
-              title="Monde 1950 - 2020"
-              subTitle='Écarts des températures en C° sur la période 1950 - 20...'
+              title="Coïncidence ou corrélation ?"
+              subTitle='Ecarts des températures en C°  et évolution du nombre de catastrophes climatique sur la période 1950 et 2018'
               page="02"
               > </GraphDisplayPageFive>
           </div>

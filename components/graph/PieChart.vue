@@ -84,6 +84,7 @@ export default {
                     }],
                   },
                   legend: {
+                    display: false,
                     position: 'bottom',
                     labels: {
                       usePointStyle: true,

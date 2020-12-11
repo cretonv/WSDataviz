@@ -10,6 +10,12 @@
       ref="lottie"
       @animControl="setAnimController"
     />
+    <!--<div class="animation">
+      <video autoplay loop>
+        <source src="/ressources/video/logo.mp4"
+                type="video/mp4">
+      </video>
+    </div>-->
     <div class="baseline">Les catastrophes climatiques les plus assourdissantes ne sont pas forcément les plus dévastatrices.</div>
   </div>
 </template>
@@ -61,6 +67,12 @@
       line-height: 29px;
       text-align: center;
       color: #C1C1C1;
+    }
+    .animation {
+      max-width: 80vw;
+      height: auto;
+      margin: 10vw 35vh;
+
     }
   }
 </style>

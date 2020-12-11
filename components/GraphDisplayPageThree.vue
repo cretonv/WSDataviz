@@ -151,17 +151,17 @@
       }
     }
     .comment {
-      grid-column: 5 / 8;
-      grid-row: 2 / 4;
-      width: 100%;
-      height: 100%;
-      svg {
-        width: 14vw;
-        height: auto;
-        position: absolute;
-        transform: translateX(-80%);
-        top: 49%;
-      }
+         grid-column: 5 / 8;
+         grid-row: 2 / 4;
+         width: 100%;
+         height: 100%;
+         svg {
+           width: 14vw;
+           height: auto;
+           position: absolute;
+           transform: translateX(-80%);
+           top: 49%;
+         }
     }
     .paragraph {
       grid-column: 3;
@@ -178,7 +178,7 @@
       padding: 20px;
 
       &.bis {
-        grid-row: 3;
+        grid-row: 4;
       }
     }
   }

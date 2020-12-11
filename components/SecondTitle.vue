@@ -126,7 +126,7 @@
       color: #9D9D9D;
       height: 100%;
       width: 100%;
-
+      padding: 8px;
     }
     .first-part-title-container {
       position: relative;
