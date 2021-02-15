@@ -1,6 +1,11 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
-  head: {
+ 
+ 
+ ssr: false,
+ target: 'static',
+
+ head: {
     title: 'WSDataviz',
     meta: [
       { charset: 'utf-8' },
